@@ -2,75 +2,203 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Portfólio de João Pedro — produtos digitais, interfaces e inteligência artificial.">
-  <meta name="theme-color" content="#090907">
+  <meta name="theme-color" content="#000000">
   <title>João Pedro — Creative Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
-  <style>
-    :root{--ink:#090907;--paper:#f0eadc;--muted:#9b978c;--gold:#d7ad55;--gold2:#f4d98d;--line:rgba(240,234,220,.14);--ease:cubic-bezier(.22,1,.36,1)}
-    *{box-sizing:border-box}html{scroll-behavior:smooth;overflow-x:hidden}body{margin:0;background:var(--ink);color:var(--paper);font-family:Manrope,sans-serif;overflow-x:hidden}a{color:inherit}button{font:inherit}.noise{position:fixed;inset:0;pointer-events:none;z-index:20;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}.skip{position:fixed;z-index:99;top:1rem;left:1rem;padding:.7rem 1rem;background:var(--paper);color:var(--ink);transform:translateY(-160%)}.skip:focus{transform:none}.nav{position:fixed;z-index:15;top:0;left:0;width:100%;display:flex;align-items:center;justify-content:space-between;padding:1.35rem 4vw;border-bottom:1px solid transparent;transition:.3s}.nav.scrolled{background:rgba(9,9,7,.78);backdrop-filter:blur(18px);border-color:var(--line)}.logo{text-decoration:none;font-weight:700;letter-spacing:-.06em;font-size:1.15rem}.logo i{color:var(--gold);font-style:normal}.nav-links{display:flex;gap:2rem}.nav-links a,.nav-cta{font-family:'DM Mono';font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;text-decoration:none}.nav-links a{color:var(--muted)}.nav-links a:hover{color:var(--paper)}.nav-cta{border:1px solid var(--line);border-radius:99px;padding:.7rem 1rem}.hero{min-height:100svh;position:relative;display:grid;grid-template-columns:1.12fr .88fr;align-items:center;padding:9rem 6vw 5rem;isolation:isolate}.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 72% 45%,rgba(215,173,85,.11),transparent 30%),linear-gradient(90deg,transparent 49.9%,rgba(255,255,255,.05) 50%,transparent 50.1%);z-index:-2}.hero-copy{position:relative;z-index:2}.kicker{font:400 .68rem 'DM Mono';letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);display:flex;align-items:center;gap:.8rem}.kicker:before{content:"";width:2.4rem;height:1px;background:var(--gold)}h1,h2,h3,p{margin-top:0}.hero h1{font-size:clamp(4.3rem,9vw,9.5rem);line-height:.78;letter-spacing:-.075em;margin:2rem 0 2.5rem;max-width:9ch}.hero h1 em{font-family:'Playfair Display';font-weight:500;color:var(--gold2)}.hero-intro{max-width:39rem;display:grid;grid-template-columns:5rem 1fr;gap:1rem;color:#bbb6ab;line-height:1.7}.hero-intro span{font:400 .62rem 'DM Mono';color:#77736a;padding-top:.4rem}.hero-actions{display:flex;align-items:center;gap:1.2rem;margin-top:2.3rem}.button{display:inline-flex;align-items:center;gap:.7rem;padding:.9rem 1.25rem;border-radius:999px;background:var(--paper);color:var(--ink);font:500 .72rem 'DM Mono';text-transform:uppercase;letter-spacing:.08em;text-decoration:none;transition:transform .3s var(--ease),background .3s}.button:hover{transform:translateY(-3px);background:var(--gold2)}.text-link{font:400 .7rem 'DM Mono';text-transform:uppercase;letter-spacing:.08em;text-underline-offset:.4rem}.crown-stage{height:min(76vh,720px);position:relative;display:grid;place-items:center}.crown-stage:after{content:"";position:absolute;width:70%;height:10%;left:15%;bottom:10%;background:radial-gradient(ellipse,rgba(215,173,85,.22),transparent 68%);filter:blur(18px)}#crown-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:2}.crown-fallback{font-family:'Playfair Display';font-size:clamp(10rem,28vw,24rem);color:var(--gold);filter:drop-shadow(0 18px 40px rgba(215,173,85,.18));transform:rotate(-8deg);line-height:1}.crown-label{position:absolute;right:0;bottom:11%;font:300 .6rem 'DM Mono';color:#77736a;letter-spacing:.15em;text-transform:uppercase;writing-mode:vertical-rl}.scroll-note{position:absolute;bottom:2rem;left:6vw;font:400 .62rem 'DM Mono';color:#747067;text-transform:uppercase;letter-spacing:.14em;display:flex;gap:1rem;align-items:center}.scroll-note:after{content:"";width:4rem;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
-    .manifesto{min-height:78vh;display:grid;place-items:center;padding:10rem 6vw;position:relative;overflow:hidden}.manifesto:before{content:"JP";position:absolute;font:600 40vw Manrope;color:rgba(255,255,255,.018);letter-spacing:-.15em}.manifesto p{font-size:clamp(2.5rem,6vw,6.5rem);font-weight:500;line-height:1.04;letter-spacing:-.055em;max-width:16ch;position:relative}.manifesto p span{color:var(--gold2);font-family:'Playfair Display';font-style:italic}.projects{padding:8rem 4vw 5rem}.section-head{display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:2rem;margin-bottom:5rem}.section-head h2{font-size:clamp(3.4rem,7vw,7rem);letter-spacing:-.07em;line-height:.86;margin:.8rem 0 0}.section-head p{color:var(--muted);line-height:1.7;max-width:31rem;margin-left:auto}.project{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(18rem,.65fr);gap:4vw;align-items:center;padding:7rem 0;border-top:1px solid var(--line);min-height:80vh}.project:nth-child(even){grid-template-columns:minmax(18rem,.65fr) minmax(0,1.35fr)}.project:nth-child(even) .project-copy{order:-1}.project-index{font:400 .65rem 'DM Mono';letter-spacing:.14em;color:var(--gold);text-transform:uppercase}.project h3{font-size:clamp(2.7rem,5vw,5.7rem);letter-spacing:-.065em;line-height:.9;margin:1.1rem 0 1.5rem}.project.featured h3:after{content:"Principal";font:400 .58rem 'DM Mono';letter-spacing:.12em;text-transform:uppercase;color:var(--ink);background:var(--gold2);border-radius:99px;padding:.45rem .7rem;vertical-align:top;margin-left:.6rem}.project-copy p{color:var(--muted);line-height:1.75;max-width:35rem}.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.8rem 0}.chip{border:1px solid var(--line);padding:.45rem .65rem;border-radius:99px;font:400 .59rem 'DM Mono';text-transform:uppercase;color:#aaa59b}.status{display:inline-flex;gap:.55rem;align-items:center;font:400 .64rem 'DM Mono';text-transform:uppercase;letter-spacing:.08em;color:#a7a299}.status:before{content:"";width:6px;height:6px;border-radius:50%;background:#d19b57;box-shadow:0 0 10px #d19b57}.project-link{display:inline-flex;gap:.7rem;align-items:center;font:500 .69rem 'DM Mono';text-transform:uppercase;letter-spacing:.1em;text-underline-offset:.4rem}.carousel{position:relative;overflow:hidden;border-radius:1rem;background:#11110e;border:1px solid var(--line);box-shadow:0 35px 90px rgba(0,0,0,.4);aspect-ratio:16/10;touch-action:pan-y}.track{height:100%;display:flex;transition:transform .75s var(--ease)}.slide{min-width:100%;height:100%;position:relative;overflow:hidden}.slide img{width:100%;height:100%;object-fit:cover}.slide:after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.05);pointer-events:none}.mock{height:100%;padding:5%;background:radial-gradient(circle at 80% 20%,var(--glow,rgba(215,173,85,.18)),transparent 36%),#11110e;display:grid;place-items:center}.mock-window{width:92%;height:82%;border:1px solid rgba(255,255,255,.1);border-radius:.65rem;background:#0b0b09;overflow:hidden;box-shadow:0 25px 50px rgba(0,0,0,.5)}.mock-bar{height:11%;border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;padding:0 4%;gap:5px}.mock-bar i{width:6px;height:6px;border-radius:50%;background:#4b493f}.mock-body{height:89%;display:grid;grid-template-columns:24% 1fr}.mock-nav{border-right:1px solid rgba(255,255,255,.07);padding:13%}.mock-nav b,.mock-content b{display:block;height:5px;border-radius:3px;background:rgba(255,255,255,.09);margin-bottom:10px}.mock-nav b:nth-child(2){width:75%}.mock-nav b:nth-child(3){width:58%}.mock-content{padding:8%;position:relative}.mock-content strong{font-size:clamp(1rem,2.5vw,2.8rem);letter-spacing:-.06em}.mock-content p{margin-top:.6rem;font-size:.7rem;color:#706d65}.mock-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4%;height:43%;margin-top:8%}.mock-card{border:1px solid rgba(255,255,255,.08);border-radius:.35rem;background:linear-gradient(145deg,rgba(255,255,255,.04),transparent);position:relative}.mock-card:before{content:"";position:absolute;left:12%;right:25%;bottom:14%;height:4px;border-radius:2px;background:var(--accent,var(--gold))}.carousel-controls{position:absolute;z-index:3;left:1rem;right:1rem;bottom:1rem;display:flex;justify-content:space-between;align-items:center}.arrows{display:flex;gap:.4rem}.arrow{width:2.35rem;height:2.35rem;border-radius:50%;border:1px solid rgba(255,255,255,.18);background:rgba(9,9,7,.62);backdrop-filter:blur(8px);color:white;cursor:pointer}.arrow:hover,.arrow:focus-visible{background:var(--gold);color:var(--ink)}.dots{display:flex;gap:.42rem}.dot{width:18px;height:2px;border:0;background:rgba(255,255,255,.28);padding:0;cursor:pointer}.dot.active{background:var(--gold2)}
-    .contact{min-height:78vh;padding:10rem 6vw 4rem;display:flex;flex-direction:column;justify-content:space-between;background:var(--paper);color:var(--ink);position:relative;overflow:hidden}.contact:before{content:"";position:absolute;width:40vw;height:40vw;border:1px solid rgba(9,9,7,.1);border-radius:50%;right:-10vw;top:-15vw}.contact h2{font-size:clamp(4rem,10vw,11rem);line-height:.78;letter-spacing:-.08em;max-width:9ch;position:relative}.contact h2 em{font-family:'Playfair Display';font-weight:500;color:#9b702a}.contact-row{display:flex;justify-content:space-between;align-items:end;gap:2rem;border-top:1px solid rgba(9,9,7,.2);padding-top:2rem}.contact-row a{font-size:clamp(1.1rem,2vw,1.6rem);text-underline-offset:.4rem}.footer-meta{font:400 .62rem 'DM Mono';text-transform:uppercase;letter-spacing:.12em;color:#656158}.reveal{opacity:0;transform:translateY(54px);transition:opacity 1s var(--ease),transform 1s var(--ease)}.reveal.in{opacity:1;transform:none}:focus-visible{outline:2px solid var(--gold2);outline-offset:4px}
-    .image-zoom{all:unset;display:block;width:100%;height:100%;position:relative;cursor:zoom-in}.image-zoom:before{content:"Ampliar ↗";position:absolute;z-index:2;top:1rem;right:1rem;padding:.55rem .75rem;border:1px solid rgba(255,255,255,.2);border-radius:999px;background:rgba(9,9,7,.68);backdrop-filter:blur(10px);font:500 .58rem 'DM Mono';letter-spacing:.1em;text-transform:uppercase;color:var(--paper);opacity:0;transform:translateY(-6px);transition:.3s var(--ease)}.image-zoom:hover:before,.image-zoom:focus-visible:before{opacity:1;transform:none}.image-zoom img{display:block}.lightbox{width:100%;max-width:none;height:100%;max-height:none;margin:0;padding:0;border:0;background:rgba(5,5,4,.94);color:var(--paper);overflow:hidden}.lightbox::backdrop{background:#050504}.lightbox[open]{display:grid;grid-template-rows:auto minmax(0,1fr) auto}.lightbox-bar,.lightbox-footer{display:flex;align-items:center;justify-content:space-between;padding:1rem clamp(1rem,3vw,3rem);font:400 .62rem 'DM Mono';letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}.lightbox-bar{border-bottom:1px solid var(--line)}.lightbox-footer{border-top:1px solid var(--line)}.lightbox-close,.lightbox-nav{border:1px solid var(--line);background:transparent;color:var(--paper);border-radius:999px;cursor:pointer}.lightbox-close{padding:.65rem .9rem;font:500 .6rem 'DM Mono';letter-spacing:.1em;text-transform:uppercase}.lightbox-actions{display:flex;gap:.5rem}.lightbox-nav{width:2.6rem;height:2.6rem}.lightbox-close:hover,.lightbox-nav:hover{background:var(--gold2);color:var(--ink)}.lightbox-figure{min-height:0;margin:0;padding:1.25rem;display:grid;place-items:center;position:relative}.lightbox-image{display:block;max-width:min(94vw,1440px);max-height:calc(100svh - 10rem);width:auto;height:auto;object-fit:contain;border-radius:.5rem;box-shadow:0 30px 100px rgba(0,0,0,.65)}body:has(.lightbox[open]){overflow:hidden}
-    @media(max-width:800px){.nav-links{display:none}.hero{grid-template-columns:1fr;padding:8rem 5vw 4rem}.hero-copy{padding-top:1rem}.hero h1{font-size:clamp(4rem,20vw,7rem)}.hero-intro{grid-template-columns:1fr}.hero-intro span{display:none}.crown-stage{position:absolute;inset:12% -28% auto 42%;height:48vh;opacity:.72;z-index:-1}.crown-label{display:none}.section-head,.project,.project:nth-child(even){grid-template-columns:1fr}.section-head p{margin-left:0}.project{padding:5rem 0;min-height:0;gap:2.5rem}.project:nth-child(even) .project-copy{order:0}.carousel{aspect-ratio:4/3}.contact-row{align-items:flex-start;flex-direction:column}.scroll-note{display:none}.project.featured h3:after{display:none}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}#crown-canvas{display:none}}
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+      }
+    }
+  </script>
 </head>
 <body>
-<a class="skip" href="#projetos">Ir para os projetos</a><div class="noise"></div>
-<nav class="nav" aria-label="Navegação principal"><a class="logo" href="#inicio">alvz<i>.</i>dev</a><div class="nav-links"><a href="#sobre">Manifesto</a><a href="#projetos">Projetos</a></div><a class="nav-cta" href="#contato">Vamos conversar ↗</a></nav>
-<main>
-  <section class="hero" id="inicio"><div class="hero-copy"><div class="kicker">Creative developer · Brasil</div><h1>Ideias com <em>presença.</em></h1><div class="hero-intro"><span>01 / 04</span><p>Eu sou João Pedro. Crio produtos digitais onde tecnologia, inteligência artificial e direção visual trabalham como uma coisa só.</p></div><div class="hero-actions"><a class="button" href="#projetos">Explorar projetos <b>↓</b></a><a class="text-link" href="#contato">Disponível para criar</a></div></div><div class="crown-stage" aria-hidden="true"><div class="crown-fallback">♛</div><canvas id="crown-canvas"></canvas><span class="crown-label">Arraste para explorar · role para transformar</span></div><div class="scroll-note">Role para entrar</div></section>
-  <section class="manifesto" id="sobre"><p class="reveal">Código é matéria-prima. A experiência é o que <span>permanece.</span></p></section>
-  <section class="projects" id="projetos"><header class="section-head reveal"><div><div class="kicker">Trabalhos selecionados</div><h2>Projetos<br>com pulso.</h2></div><p>Produtos autorais construídos para resolver problemas reais — com clareza, personalidade e atenção obsessiva aos detalhes.</p></header>
-    <article class="project featured reveal"><div class="carousel" data-carousel aria-label="Imagens do projeto Alchemist"><div class="track"><div class="slide"><button class="image-zoom" type="button" data-lightbox-image data-full="assets/alchemist/landing-full.webp" aria-label="Ampliar landing page do Alchemist"><img src="assets/alchemist/landing.webp" width="423" height="940" alt="Landing page do Alchemist RPG" loading="lazy" decoding="async"></button></div><div class="slide"><button class="image-zoom" type="button" data-lightbox-image data-full="assets/alchemist/dashboard-full.webp" aria-label="Ampliar dashboard do Alchemist"><img src="assets/alchemist/dashboard.webp" width="423" height="940" alt="Dashboard do Alchemist RPG" loading="lazy" decoding="async"></button></div><div class="slide"><button class="image-zoom" type="button" data-lightbox-image data-full="assets/alchemist/characters-full.webp" aria-label="Ampliar gestão de personagens do Alchemist"><img src="assets/alchemist/characters.webp" width="423" height="940" alt="Gestão de personagens do Alchemist RPG" loading="lazy" decoding="async"></button></div></div><div class="carousel-controls"><div class="dots"></div><div class="arrows"><button class="arrow prev" aria-label="Imagem anterior">←</button><button class="arrow next" aria-label="Próxima imagem">→</button></div></div></div><div class="project-copy"><span class="project-index">01 — Produto em destaque</span><h3>Alchemist</h3><p>O espaço de trabalho definitivo para mestres e jogadores de RPG. Campanhas, personagens, NPCs e sessões reunidos em uma experiência dark-fantasy imersiva.</p><div class="chips"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">SaaS</span><span class="chip">Product design</span></div><span class="status">Em evolução</span></div></article>
-    <article class="project reveal"><div class="carousel" data-carousel aria-label="Conceitos do Nexus Agent"><div class="track"><div class="slide"><div class="mock" style="--accent:#b9ff66;--glow:rgba(118,255,73,.14)"><div class="mock-window"><div class="mock-bar"><i></i><i></i><i></i></div><div class="mock-body"><div class="mock-nav"><b></b><b></b><b></b></div><div class="mock-content"><strong>NEXUS / AGENT</strong><p>Ship software, beyond the terminal.</p><div class="mock-grid"><i class="mock-card"></i><i class="mock-card"></i><i class="mock-card"></i></div></div></div></div></div></div><div class="slide"><div class="mock" style="--accent:#b9ff66"><div class="mock-window"><div class="mock-bar"><i></i><i></i><i></i></div><div class="mock-body"><div class="mock-nav"><b></b><b></b><b></b></div><div class="mock-content"><strong>BUILD MODE</strong><p>Claude · OpenAI · NVIDIA · your key</p><div class="mock-grid"><i class="mock-card"></i><i class="mock-card"></i><i class="mock-card"></i></div></div></div></div></div></div></div><div class="carousel-controls"><div class="dots"></div><div class="arrows"><button class="arrow prev" aria-label="Imagem anterior">←</button><button class="arrow next" aria-label="Próxima imagem">→</button></div></div></div><div class="project-copy"><span class="project-index">02 — Inteligência artificial</span><h3>Nexus Agent</h3><p>Um agente de IA para programação que abandona a mesmice do terminal. Use sua própria chave de API — NVIDIA, Claude, OpenAI e outros provedores — em uma interface feita para construir.</p><div class="chips"><span class="chip">AI agents</span><span class="chip">Multi-provider</span><span class="chip">Developer tools</span></div><a class="project-link" href="https://nexus-your-ai-coder.vercel.app/" target="_blank" rel="noreferrer">Visitar projeto ↗</a></div></article>
-    <article class="project reveal"><div class="carousel" data-carousel aria-label="Conceitos do IA-OS"><div class="track"><div class="slide"><div class="mock" style="--accent:#7db7ff;--glow:rgba(68,141,255,.18)"><div class="mock-window"><div class="mock-bar"><i></i><i></i><i></i></div><div class="mock-body"><div class="mock-nav"><b></b><b></b><b></b></div><div class="mock-content"><strong>IA—OS</strong><p>Seu dia, em uma única inteligência.</p><div class="mock-grid"><i class="mock-card"></i><i class="mock-card"></i><i class="mock-card"></i></div></div></div></div></div></div><div class="slide"><div class="mock" style="--accent:#7db7ff"><div class="mock-window"><div class="mock-bar"><i></i><i></i><i></i></div><div class="mock-body"><div class="mock-nav"><b></b><b></b><b></b></div><div class="mock-content"><strong>FOCUS / 09:41</strong><p>Contexto, tarefas e ferramentas conectadas.</p><div class="mock-grid"><i class="mock-card"></i><i class="mock-card"></i><i class="mock-card"></i></div></div></div></div></div></div></div><div class="carousel-controls"><div class="dots"></div><div class="arrows"><button class="arrow prev" aria-label="Imagem anterior">←</button><button class="arrow next" aria-label="Próxima imagem">→</button></div></div></div><div class="project-copy"><span class="project-index">03 — Sistema experimental</span><h3>IA-OS</h3><p>Um sistema operacional virtual pensado para reduzir o atrito da vida moderna. Contexto, tarefas e ferramentas reunidos em uma camada inteligente e simples.</p><div class="chips"><span class="chip">Artificial intelligence</span><span class="chip">OS concept</span><span class="chip">Productivity</span></div><span class="status">Em desenvolvimento</span></div></article>
-    <article class="project reveal"><div class="carousel" data-carousel aria-label="Conceitos da Galeria de Artistas"><div class="track"><div class="slide"><div class="mock" style="--accent:#ff7b9d;--glow:rgba(255,66,127,.18)"><div class="mock-window"><div class="mock-bar"><i></i><i></i><i></i></div><div class="mock-body"><div class="mock-nav"><b></b><b></b><b></b></div><div class="mock-content"><strong>OBRA / 001</strong><p>Arte independente encontra seu público.</p><div class="mock-grid"><i class="mock-card"></i><i class="mock-card"></i><i class="mock-card"></i></div></div></div></div></div></div><div class="slide"><div class="mock" style="--accent:#ff7b9d"><div class="mock-window"><div class="mock-bar"><i></i><i></i><i></i></div><div class="mock-body"><div class="mock-nav"><b></b><b></b><b></b></div><div class="mock-content"><strong>NOVOS OLHARES</strong><p>Descubra, publique, colecione.</p><div class="mock-grid"><i class="mock-card"></i><i class="mock-card"></i><i class="mock-card"></i></div></div></div></div></div></div></div><div class="carousel-controls"><div class="dots"></div><div class="arrows"><button class="arrow prev" aria-label="Imagem anterior">←</button><button class="arrow next" aria-label="Próxima imagem">→</button></div></div></div><div class="project-copy"><span class="project-index">04 — Marketplace criativo</span><h3>Galeria de Artistas</h3><p>Uma galeria virtual para artistas independentes publicarem, apresentarem e venderem suas obras em um espaço que valoriza a arte.</p><div class="chips"><span class="chip">Marketplace</span><span class="chip">Art platform</span><span class="chip">Community</span></div><span class="status">Em desenvolvimento</span></div></article>
-  </section>
-  <section class="contact" id="contato"><h2 class="reveal">Vamos criar algo <em>raro?</em></h2><div class="contact-row"><div><a href="mailto:joaopedro1083alves@gmail.com">joaopedro1083alves@gmail.com ↗</a><div class="footer-meta" style="margin-top:1rem"><a href="https://github.com/alxzyc" target="_blank" rel="noreferrer">GitHub</a> · <a href="https://linkedin.com/joão-pedro-alves-lacerda-de-jesus-69a06b3b8" target="_blank" rel="noreferrer">LinkedIn</a></div></div><span class="footer-meta">João Pedro · Creative developer · © 2026</span></div></section>
-</main>
-<dialog class="lightbox" id="image-lightbox" aria-label="Visualização ampliada da imagem">
-  <div class="lightbox-bar"><span>Alchemist · galeria</span><button class="lightbox-close" type="button" data-lightbox-close>Fechar ×</button></div>
-  <figure class="lightbox-figure"><img class="lightbox-image" alt=""><figcaption class="lightbox-caption" hidden></figcaption></figure>
-  <div class="lightbox-footer"><span class="lightbox-counter" aria-live="polite"></span><div class="lightbox-actions"><button class="lightbox-nav" type="button" data-lightbox-prev aria-label="Imagem anterior">←</button><button class="lightbox-nav" type="button" data-lightbox-next aria-label="Próxima imagem">→</button></div></div>
-</dialog>
-<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js"}}</script>
-<script type="module">
-  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const nav=document.querySelector('.nav'); addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>30),{passive:true});
-  const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.12}); document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-  let galleryPaused=false,suppressZoomUntil=0;
-  document.querySelectorAll('[data-carousel]').forEach((root)=>{const track=root.querySelector('.track'),slides=[...root.querySelectorAll('.slide')],dots=root.querySelector('.dots');let at=0,start=0,timer;slides.forEach((_,i)=>{const b=document.createElement('button');b.className='dot';b.setAttribute('aria-label',`Ir para imagem ${i+1}`);b.onclick=()=>go(i);dots.append(b)});const go=i=>{at=(i+slides.length)%slides.length;track.style.transform=`translateX(${-at*100}%)`;[...dots.children].forEach((d,n)=>d.classList.toggle('active',n===at))};const stop=()=>clearInterval(timer);const play=()=>{stop();if(!reduce&&!galleryPaused&&slides.length>1)timer=setInterval(()=>go(at+1),5200)};root.querySelector('.prev').onclick=()=>go(at-1);root.querySelector('.next').onclick=()=>go(at+1);root.addEventListener('pointerenter',stop);root.addEventListener('pointerleave',play);root.addEventListener('touchstart',e=>start=e.touches[0].clientX,{passive:true});root.addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-start;if(Math.abs(d)>45){suppressZoomUntil=performance.now()+500;go(at+(d<0?1:-1))}},{passive:true});root.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')go(at-1);if(e.key==='ArrowRight')go(at+1)});root.addEventListener('carousel:pause',stop);root.addEventListener('carousel:play',play);go(0);play()});
-  const lightbox=document.querySelector('#image-lightbox'),lightboxImage=lightbox.querySelector('.lightbox-image'),lightboxCounter=lightbox.querySelector('.lightbox-counter'),zoomItems=[...document.querySelectorAll('[data-lightbox-image]')];let zoomAt=0;
-  const showZoom=(index)=>{zoomAt=(index+zoomItems.length)%zoomItems.length;const source=zoomItems[zoomAt],image=source.querySelector('img');lightboxImage.src=source.dataset.full||image.currentSrc||image.src;lightboxImage.alt=image.alt;lightboxCounter.textContent=`${String(zoomAt+1).padStart(2,'0')} / ${String(zoomItems.length).padStart(2,'0')} · ${image.alt}`};
-  const openZoom=(index)=>{showZoom(index);galleryPaused=true;document.querySelectorAll('[data-carousel]').forEach(root=>root.dispatchEvent(new Event('carousel:pause')));lightbox.showModal()};
-  zoomItems.forEach((item,index)=>item.addEventListener('click',()=>{if(performance.now()>suppressZoomUntil)openZoom(index)}));lightbox.querySelector('[data-lightbox-prev]').onclick=()=>showZoom(zoomAt-1);lightbox.querySelector('[data-lightbox-next]').onclick=()=>showZoom(zoomAt+1);lightbox.querySelector('[data-lightbox-close]').onclick=()=>lightbox.close();lightbox.addEventListener('click',event=>{if(event.target===lightbox)lightbox.close()});lightbox.addEventListener('keydown',event=>{if(event.key==='ArrowLeft')showZoom(zoomAt-1);if(event.key==='ArrowRight')showZoom(zoomAt+1);if(event.key==='Escape'){event.preventDefault();lightbox.close()}});lightbox.addEventListener('close',()=>{lightboxImage.removeAttribute('src');galleryPaused=false;document.querySelectorAll('[data-carousel]').forEach(root=>root.dispatchEvent(new Event('carousel:play')))});
-  if(!reduce){
-    try{
-      const THREE=await import('three');
-      const {RoomEnvironment}=await import('https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/environments/RoomEnvironment.js');
-      const canvas=document.querySelector('#crown-canvas'),stage=canvas.parentElement,hero=document.querySelector('.hero'),scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(32,1,.1,100);camera.position.set(0,.45,9.2);
-      const renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true,powerPreference:'high-performance'});renderer.setPixelRatio(Math.min(devicePixelRatio,innerWidth<800?1.35:1.7));renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.15;
-      const pmrem=new THREE.PMREMGenerator(renderer);scene.environment=pmrem.fromScene(new RoomEnvironment(),.04).texture;pmrem.dispose();
-      const crown=new THREE.Group(),regalia=new THREE.Group();crown.add(regalia);scene.add(crown);
-      const gold=new THREE.MeshPhysicalMaterial({color:0xd7a83f,metalness:.96,roughness:.18,clearcoat:.18,clearcoatRoughness:.16}),goldDark=new THREE.MeshPhysicalMaterial({color:0x9b631d,metalness:.94,roughness:.24}),velvet=new THREE.MeshStandardMaterial({color:0x24040a,roughness:.78,side:THREE.DoubleSide}),ruby=new THREE.MeshPhysicalMaterial({color:0x8e1025,roughness:.15,metalness:.08,transmission:.08,thickness:.4,emissive:0x210006});
-      const profile=[new THREE.Vector2(1.55,-.36),new THREE.Vector2(1.72,-.28),new THREE.Vector2(1.76,.22),new THREE.Vector2(1.68,.4),new THREE.Vector2(1.55,.33),new THREE.Vector2(1.57,-.36)];const circlet=new THREE.Mesh(new THREE.LatheGeometry(profile,72),gold);regalia.add(circlet);
-      const inner=new THREE.Mesh(new THREE.CylinderGeometry(1.5,1.5,.62,64,1,true),velvet);regalia.add(inner);
-      const lowerRim=new THREE.Mesh(new THREE.TorusGeometry(1.68,.11,14,72),goldDark);lowerRim.rotation.x=Math.PI/2;lowerRim.position.y=-.3;regalia.add(lowerRim);const upperRim=lowerRim.clone();upperRim.material=gold;upperRim.position.y=.32;regalia.add(upperRim);
-      const motifShape=new THREE.Shape();motifShape.moveTo(-.34,0);motifShape.bezierCurveTo(-.52,.38,-.48,.88,-.18,1.04);motifShape.bezierCurveTo(-.1,.72,-.04,.42,0,.25);motifShape.bezierCurveTo(.04,.42,.1,.72,.18,1.04);motifShape.bezierCurveTo(.48,.88,.52,.38,.34,0);motifShape.lineTo(.17,-.12);motifShape.lineTo(-.17,-.12);motifShape.closePath();const motifGeometry=new THREE.ExtrudeGeometry(motifShape,{depth:.12,bevelEnabled:true,bevelSize:.045,bevelThickness:.035,bevelSegments:2,curveSegments:12});motifGeometry.center();
-      for(let i=0;i<8;i++){const angle=i/8*Math.PI*2,motif=new THREE.Mesh(motifGeometry,i%2?goldDark:gold);motif.position.set(Math.sin(angle)*1.62,.9,Math.cos(angle)*1.62);motif.rotation.y=angle;motif.scale.setScalar(i%2?1:.84);regalia.add(motif);const gem=new THREE.Mesh(new THREE.OctahedronGeometry(.14,1),ruby);gem.position.set(Math.sin(angle)*1.74,.02,Math.cos(angle)*1.74);gem.rotation.set(.3,angle,.3);regalia.add(gem)}
-      const archMaterial=gold;for(let i=0;i<2;i++){const angle=i*Math.PI/2,dir=new THREE.Vector3(Math.sin(angle),0,Math.cos(angle)),points=[];for(let s=0;s<=18;s++){const t=s/18,x=(t-.5)*3.05,y=.36+Math.sin(t*Math.PI)*2.5;points.push(new THREE.Vector3(dir.x*x,y,dir.z*x))}const arch=new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(points),48,.075,10,false),archMaterial);regalia.add(arch)}
-      const orb=new THREE.Mesh(new THREE.SphereGeometry(.24,24,16),gold);orb.position.y=2.92;regalia.add(orb);const crossV=new THREE.Mesh(new THREE.BoxGeometry(.12,.66,.12),gold);crossV.position.y=3.37;regalia.add(crossV);const crossH=new THREE.Mesh(new THREE.BoxGeometry(.5,.12,.12),gold);crossH.position.y=3.42;regalia.add(crossH);
-      scene.add(new THREE.HemisphereLight(0xffe9bd,0x120907,1.7));const key=new THREE.PointLight(0xffd078,58,18);key.position.set(3.8,4.5,5);scene.add(key);const rim=new THREE.PointLight(0xff5a20,38,16);rim.position.set(-4,1,-2.5);scene.add(rim);const fill=new THREE.PointLight(0x759dff,18,14);fill.position.set(0,-1,4);scene.add(fill);
-      let pointerX=0,pointerY=0,targetProgress=0,progress=0,visible=true,raf=0,last=performance.now();
-      const updateProgress=()=>{const rect=hero.getBoundingClientRect();targetProgress=THREE.MathUtils.clamp(-rect.top/Math.max(hero.offsetHeight,innerHeight),0,1)};addEventListener('scroll',updateProgress,{passive:true});updateProgress();stage.addEventListener('pointermove',event=>{const rect=stage.getBoundingClientRect();pointerX=(event.clientX-rect.left)/rect.width-.5;pointerY=(event.clientY-rect.top)/rect.height-.5},{passive:true});
-      const resize=()=>{const w=stage.clientWidth,h=stage.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();updateProgress()};resize();addEventListener('resize',resize);
-      const startRender=()=>{if(visible&&!document.hidden&&!raf){last=performance.now();raf=requestAnimationFrame(render)}};const render=now=>{raf=0;const dt=Math.min((now-last)/1000,.05);last=now;progress=THREE.MathUtils.damp(progress,targetProgress,5,dt);crown.rotation.y=THREE.MathUtils.damp(crown.rotation.y,-.42+progress*1.55+pointerX*.34,5,dt);crown.rotation.x=THREE.MathUtils.damp(crown.rotation.x,.04+Math.sin(progress*Math.PI)*.12+pointerY*.1,5,dt);crown.rotation.z=THREE.MathUtils.damp(crown.rotation.z,-.06+progress*.12,4,dt);crown.position.y=THREE.MathUtils.damp(crown.position.y,-.15-progress*.52,5,dt);crown.scale.setScalar(.88+progress*.08);key.position.x=3.8-progress*7.6;renderer.render(scene,camera);startRender()};
-      const visibility=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(!visible&&raf){cancelAnimationFrame(raf);raf=0}else startRender()});visibility.observe(hero);document.addEventListener('visibilitychange',()=>{if(document.hidden&&raf){cancelAnimationFrame(raf);raf=0}else startRender()});startRender();document.querySelector('.crown-fallback').style.opacity='0';
-    }catch(e){console.info('WebGL indisponível; usando coroa estática.',e)}
-  }
-</script>
-</body></html>
+  <a class="skip-link" href="#projetos">Ir para os projetos</a>
+
+  <header class="site-header" data-header>
+    <a class="brand" href="#inicio" aria-label="Alvz.dev — início">alvz<span>/</span>dev</a>
+    <nav class="nav-links" aria-label="Navegação principal">
+      <a href="#manifesto">Manifesto</a>
+      <a href="#projetos">Projetos</a>
+    </nav>
+    <a class="nav-contact" href="#contato">Contato <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero scroll-scene" id="inicio" data-scroll-scene>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="eyebrow"><span>Creative developer</span><span>Brasil / 2026</span></p>
+        <h1>
+          <span>Ideias com</span>
+          <em>presença.</em>
+        </h1>
+        <div class="hero-bottom">
+          <p>Eu sou João Pedro. Crio produtos digitais onde código, inteligência artificial e direção visual trabalham como uma coisa só.</p>
+          <div class="hero-actions">
+            <a class="button-primary" href="#projetos">Explorar projetos <span aria-hidden="true">↓</span></a>
+            <a class="button-text" href="#contato">Disponível para criar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="crown-stage" role="img" aria-label="Coroa tridimensional de metal cromado escuro, suspensa e reagindo ao movimento e à rolagem">
+        <div class="crown-fallback" aria-hidden="true">♛</div>
+        <canvas id="crown-canvas" aria-hidden="true"></canvas>
+        <div class="object-meta" aria-hidden="true">
+          <span>Object / 001</span>
+          <span>Dark chrome</span>
+        </div>
+        <p class="interaction-hint" aria-hidden="true">Mova · role · observe</p>
+      </div>
+
+      <div class="scroll-cue" aria-hidden="true"><span>Scroll to enter</span><i></i></div>
+    </section>
+
+    <section class="manifesto scroll-scene" id="manifesto" data-scroll-scene>
+      <div class="manifesto-sticky">
+        <p class="section-code">02 / Manifesto</p>
+        <div class="manifesto-copy">
+          <span class="manifesto-line">Código é matéria.</span>
+          <span class="manifesto-line">Intenção é forma.</span>
+          <span class="manifesto-line accent">Experiência é presença.</span>
+        </div>
+        <p class="manifesto-note">Não construo apenas telas. Construo sistemas que têm voz, ritmo e uma razão para existir.</p>
+      </div>
+    </section>
+
+    <section class="projects" id="projetos">
+      <header class="section-heading reveal">
+        <div>
+          <p class="section-code">03 / Trabalhos selecionados</p>
+          <h2>Quatro projetos.<br><span>Uma assinatura.</span></h2>
+        </div>
+        <p>Produtos autorais criados para resolver problemas reais — com personalidade, precisão técnica e atenção obsessiva aos detalhes.</p>
+      </header>
+
+      <article class="project project-featured scroll-scene reveal" data-scroll-scene style="--project-tone:#c7c9d0">
+        <div class="project-visual" data-parallax>
+          <div class="carousel" data-carousel aria-label="Imagens do projeto Alchemist">
+            <div class="carousel-track">
+              <figure class="carousel-slide">
+                <button class="image-zoom" type="button" data-lightbox-image data-full="assets/alchemist/landing-full.webp" aria-label="Ampliar landing page do Alchemist">
+                  <img src="assets/alchemist/landing.webp" width="423" height="940" alt="Landing page do Alchemist RPG" loading="lazy" decoding="async">
+                </button>
+              </figure>
+              <figure class="carousel-slide">
+                <button class="image-zoom" type="button" data-lightbox-image data-full="assets/alchemist/dashboard-full.webp" aria-label="Ampliar dashboard do Alchemist">
+                  <img src="assets/alchemist/dashboard.webp" width="423" height="940" alt="Dashboard do Alchemist RPG" loading="lazy" decoding="async">
+                </button>
+              </figure>
+              <figure class="carousel-slide">
+                <button class="image-zoom" type="button" data-lightbox-image data-full="assets/alchemist/characters-full.webp" aria-label="Ampliar gestão de personagens do Alchemist">
+                  <img src="assets/alchemist/characters.webp" width="423" height="940" alt="Gestão de personagens do Alchemist RPG" loading="lazy" decoding="async">
+                </button>
+              </figure>
+            </div>
+            <div class="carousel-controls">
+              <div class="carousel-dots" aria-label="Selecionar imagem"></div>
+              <div class="carousel-arrows">
+                <button class="carousel-arrow prev" type="button" aria-label="Imagem anterior">←</button>
+                <button class="carousel-arrow next" type="button" aria-label="Próxima imagem">→</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="project-copy">
+          <div class="project-meta"><span>01</span><span>Projeto principal</span><span>Em evolução</span></div>
+          <h3>Alchemist</h3>
+          <p>O espaço de trabalho definitivo para mestres e jogadores de RPG. Campanhas, personagens, NPCs e sessões reunidos em uma experiência dark-fantasy imersiva.</p>
+          <div class="project-tags"><span>React</span><span>TypeScript</span><span>SaaS</span><span>Product design</span></div>
+          <span class="project-status"><i></i>Produto em construção contínua</span>
+        </div>
+      </article>
+
+      <article class="project scroll-scene reveal" data-scroll-scene style="--project-tone:#d1ff63">
+        <div class="project-visual" data-parallax>
+          <div class="carousel" data-carousel aria-label="Conceitos visuais do Nexus Agent">
+            <div class="carousel-track">
+              <figure class="carousel-slide"><div class="concept concept-nexus"><div class="concept-top"><span>NEXUS / AGENT</span><span>01:37:42</span></div><div class="concept-center"><p>You imagine.</p><strong>Nexus builds.</strong><span>Beyond the terminal.</span></div><div class="concept-command">Create an expressive portfolio system <b>↗</b></div></div></figure>
+              <figure class="carousel-slide"><div class="concept concept-nexus"><div class="concept-top"><span>BUILD / MODE</span><span>CONNECTED</span></div><div class="provider-list"><span>OpenAI <i>Online</i></span><span>Claude <i>Online</i></span><span>NVIDIA <i>Online</i></span><span>Your API key <i>Secure</i></span></div></div></figure>
+              <figure class="carousel-slide"><div class="concept concept-nexus"><div class="concept-top"><span>WORKSPACE / 04</span><span>SHIPPING</span></div><div class="code-surface"><i></i><i></i><i></i><strong>Interface without terminal fatigue.</strong><p>Plan · Build · Review · Ship</p></div></div></figure>
+            </div>
+            <div class="carousel-controls"><div class="carousel-dots" aria-label="Selecionar imagem"></div><div class="carousel-arrows"><button class="carousel-arrow prev" type="button" aria-label="Imagem anterior">←</button><button class="carousel-arrow next" type="button" aria-label="Próxima imagem">→</button></div></div>
+          </div>
+        </div>
+        <div class="project-copy">
+          <div class="project-meta"><span>02</span><span>AI developer tool</span><span>Disponível</span></div>
+          <h3>Nexus Agent</h3>
+          <p>Um agente de IA focado em programação que abandona a mesmice dos terminais. Funciona com sua própria chave de API — NVIDIA, Claude, OpenAI e outros provedores.</p>
+          <div class="project-tags"><span>AI agents</span><span>Multi-provider</span><span>Developer experience</span></div>
+          <a class="project-link" href="https://nexus-your-ai-coder.vercel.app/" target="_blank" rel="noreferrer">Visitar projeto <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+
+      <article class="project scroll-scene reveal" data-scroll-scene style="--project-tone:#8ab4ff">
+        <div class="project-visual" data-parallax>
+          <div class="carousel" data-carousel aria-label="Conceitos visuais do IA-OS">
+            <div class="carousel-track">
+              <figure class="carousel-slide"><div class="concept concept-os"><div class="os-clock">09:41</div><div class="os-orbit"><span>IA</span><i></i><i></i><i></i></div><p>Seu dia em uma única inteligência.</p></div></figure>
+              <figure class="carousel-slide"><div class="concept concept-os"><div class="concept-top"><span>IA—OS / FOCUS</span><span>LIVE</span></div><div class="os-panels"><span>Contexto<small>12 fontes conectadas</small></span><span>Agenda<small>Próximo: deep work</small></span><span>Ações<small>3 automatizadas</small></span></div></div></figure>
+              <figure class="carousel-slide"><div class="concept concept-os"><div class="concept-top"><span>IA—OS / FLOW</span><span>SIMPLIFY</span></div><div class="flow-line"><i></i><strong>Um sistema.<br>Menos ruído.</strong><i></i></div></div></figure>
+            </div>
+            <div class="carousel-controls"><div class="carousel-dots" aria-label="Selecionar imagem"></div><div class="carousel-arrows"><button class="carousel-arrow prev" type="button" aria-label="Imagem anterior">←</button><button class="carousel-arrow next" type="button" aria-label="Próxima imagem">→</button></div></div>
+          </div>
+        </div>
+        <div class="project-copy">
+          <div class="project-meta"><span>03</span><span>Sistema experimental</span><span>Em desenvolvimento</span></div>
+          <h3>IA-OS</h3>
+          <p>Um sistema operacional virtual com o objetivo de simplificar a vida moderna, conectando contexto, tarefas e ferramentas em uma camada inteligente.</p>
+          <div class="project-tags"><span>Artificial intelligence</span><span>OS concept</span><span>Productivity</span></div>
+          <span class="project-status"><i></i>Em breve</span>
+        </div>
+      </article>
+
+      <article class="project scroll-scene reveal" data-scroll-scene style="--project-tone:#ff8ca5">
+        <div class="project-visual" data-parallax>
+          <div class="carousel" data-carousel aria-label="Conceitos visuais da Galeria de Artistas">
+            <div class="carousel-track">
+              <figure class="carousel-slide"><div class="concept concept-gallery"><div class="art-piece art-one"></div><div class="art-caption"><span>Obra / 001</span><strong>Novos olhares.</strong><small>Arte independente encontra seu público.</small></div></div></figure>
+              <figure class="carousel-slide"><div class="concept concept-gallery"><div class="gallery-grid"><i></i><i></i><i></i><i></i></div><div class="art-caption"><span>Descobrir</span><strong>Colecione o singular.</strong></div></div></figure>
+              <figure class="carousel-slide"><div class="concept concept-gallery"><div class="artist-card"><span>Artista em destaque</span><strong>Forma, matéria<br>e identidade.</strong><button type="button" tabindex="-1">Ver coleção ↗</button></div></div></figure>
+            </div>
+            <div class="carousel-controls"><div class="carousel-dots" aria-label="Selecionar imagem"></div><div class="carousel-arrows"><button class="carousel-arrow prev" type="button" aria-label="Imagem anterior">←</button><button class="carousel-arrow next" type="button" aria-label="Próxima imagem">→</button></div></div>
+          </div>
+        </div>
+        <div class="project-copy">
+          <div class="project-meta"><span>04</span><span>Marketplace criativo</span><span>Em desenvolvimento</span></div>
+          <h3>Galeria de Artistas</h3>
+          <p>Uma galeria virtual onde artistas independentes podem publicar, apresentar e vender suas artes em um espaço que valoriza cada obra.</p>
+          <div class="project-tags"><span>Marketplace</span><span>Art platform</span><span>Community</span></div>
+          <span class="project-status"><i></i>Em breve</span>
+        </div>
+      </article>
+    </section>
+
+    <section class="contact scroll-scene" id="contato" data-scroll-scene>
+      <p class="section-code">04 / Próximo capítulo</p>
+      <h2 class="reveal">Vamos criar algo<br><span>impossível de ignorar.</span></h2>
+      <div class="contact-row">
+        <a class="contact-email" href="mailto:joaopedro1083alves@gmail.com">joaopedro1083alves@gmail.com <span aria-hidden="true">↗</span></a>
+        <div class="social-links"><a href="https://github.com/alxzyc" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://linkedin.com/joão-pedro-alves-lacerda-de-jesus-69a06b3b8" target="_blank" rel="noreferrer">LinkedIn ↗</a></div>
+      </div>
+      <footer><span>João Pedro · Creative Developer</span><span>Brasil · © 2026</span></footer>
+    </section>
+  </main>
+
+  <dialog class="lightbox" id="image-lightbox" aria-label="Visualização ampliada da imagem">
+    <div class="lightbox-bar"><span>Alchemist / galeria</span><button class="lightbox-close" type="button" data-lightbox-close>Fechar ×</button></div>
+    <figure class="lightbox-figure"><img class="lightbox-image" alt=""><figcaption class="lightbox-caption" hidden></figcaption></figure>
+    <div class="lightbox-footer"><span class="lightbox-counter" aria-live="polite"></span><div class="lightbox-actions"><button class="lightbox-nav" type="button" data-lightbox-prev aria-label="Imagem anterior">←</button><button class="lightbox-nav" type="button" data-lightbox-next aria-label="Próxima imagem">→</button></div></div>
+  </dialog>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
