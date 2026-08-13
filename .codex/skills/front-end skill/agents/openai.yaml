@@ -1,0 +1,4 @@
+interface:
+  display_name: "Creative Frontend"
+  short_description: "Crie experiências web imersivas e fluidas"
+  default_prompt: "Use $creative-frontend para criar uma landing page imersiva com animações ligadas ao scroll."
