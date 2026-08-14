@@ -656,6 +656,10 @@ canvas {
   object-fit: cover;
 }
 
+.carousel-slide .nexus-screenshot {
+  object-position: center top;
+}
+
 .carousel-controls {
   position: absolute;
   right: 1rem;
@@ -1221,6 +1225,10 @@ canvas {
 .lightbox-actions {
   display: flex;
   gap: 0.5rem;
+}
+
+.lightbox-actions[hidden] {
+  display: none;
 }
 
 .lightbox-nav {

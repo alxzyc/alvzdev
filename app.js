@@ -189,27 +189,34 @@ document.addEventListener("visibilitychange", () => {
 const lightbox = document.querySelector("#image-lightbox");
 const lightboxImage = lightbox.querySelector(".lightbox-image");
 const lightboxCounter = lightbox.querySelector(".lightbox-counter");
+const lightboxTitle = lightbox.querySelector("[data-lightbox-title]");
+const lightboxActions = lightbox.querySelector(".lightbox-actions");
 const zoomItems = [...document.querySelectorAll("[data-lightbox-image]")];
+let activeZoomItems = zoomItems;
 let zoomIndex = 0;
 
 function showZoom(index) {
-  zoomIndex = (index + zoomItems.length) % zoomItems.length;
-  const source = zoomItems[zoomIndex];
+  zoomIndex = (index + activeZoomItems.length) % activeZoomItems.length;
+  const source = activeZoomItems[zoomIndex];
   const image = source.querySelector("img");
   lightboxImage.src = source.dataset.full || image.currentSrc || image.src;
   lightboxImage.alt = image.alt;
-  lightboxCounter.textContent = `${String(zoomIndex + 1).padStart(2, "0")} / ${String(zoomItems.length).padStart(2, "0")} · ${image.alt}`;
+  lightboxCounter.textContent = `${String(zoomIndex + 1).padStart(2, "0")} / ${String(activeZoomItems.length).padStart(2, "0")} · ${image.alt}`;
 }
 
-function openZoom(index) {
-  showZoom(index);
+function openZoom(source) {
+  const gallery = source.dataset.gallery || "Projeto";
+  activeZoomItems = zoomItems.filter((item) => (item.dataset.gallery || "Projeto") === gallery);
+  lightboxTitle.textContent = `${gallery} / galeria`;
+  lightboxActions.hidden = activeZoomItems.length < 2;
+  showZoom(activeZoomItems.indexOf(source));
   galleryPaused = true;
   carousels.forEach((carousel) => carousel.stop());
   lightbox.showModal();
 }
 
-zoomItems.forEach((item, index) => item.addEventListener("click", () => {
-  if (performance.now() > suppressZoomUntil) openZoom(index);
+zoomItems.forEach((item) => item.addEventListener("click", () => {
+  if (performance.now() > suppressZoomUntil) openZoom(item);
 }));
 
 lightbox.querySelector("[data-lightbox-prev]").addEventListener("click", () => showZoom(zoomIndex - 1));
