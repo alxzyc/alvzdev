@@ -656,8 +656,12 @@ canvas {
   object-fit: cover;
 }
 
-.carousel-slide .nexus-screenshot {
+.carousel-slide .project-screenshot {
   object-position: center top;
+}
+
+.carousel-slide .iaos-screenshot {
+  object-position: left top;
 }
 
 .carousel-controls {
