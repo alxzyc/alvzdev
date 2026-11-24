@@ -866,10 +866,21 @@ function loadStudioConfig() {
 
 function saveStudioConfig(config) {
   try {
-    localStorage.setItem("alvz_studio_v2", JSON.stringify(config));
+    const jsonStr = JSON.stringify(config);
+    if (jsonStr.length > 4.5 * 1024 * 1024) {
+      showStudioToast("⚠️ Configuração muito grande para localStorage. Reduza o número/tamanho das imagens.");
+      return false;
+    }
+    localStorage.setItem("alvz_studio_v2", jsonStr);
+    return true;
   } catch (err) {
     console.error("Falha ao salvar configuração:", err);
-    showStudioToast("⚠️ Erro ao salvar dados no navegador.");
+    if (err.name === "QuotaExceededError" || err.code === 22) {
+      showStudioToast("⚠️ Armazenamento cheio. Exporte o backup e limpe dados do site, ou reduza as imagens.");
+    } else {
+      showStudioToast("⚠️ Erro ao salvar dados no navegador.");
+    }
+    return false;
   }
 }
 
@@ -1296,8 +1307,8 @@ function initStudio() {
         currentConfig.theme = { ...preset };
         applyThemeVariables(currentConfig.theme);
         syncStudioFormFields();
-        saveStudioConfig(currentConfig);
-        showStudioToast(`Tema "${card.querySelector(".preset-title")?.textContent}" aplicado!`);
+        const saved = saveStudioConfig(currentConfig);
+        if (saved !== false) showStudioToast(`Tema "${card.querySelector(".preset-title")?.textContent}" aplicado!`);
       }
     });
   });
@@ -1305,16 +1316,16 @@ function initStudio() {
   document.getElementById("btn-apply-theme")?.addEventListener("click", () => {
     currentConfig.theme = getThemeFromInputs();
     applyThemeVariables(currentConfig.theme);
-    saveStudioConfig(currentConfig);
-    showStudioToast("✓ Paleta de cores salva com sucesso!");
+    const saved = saveStudioConfig(currentConfig);
+    if (saved !== false) showStudioToast("✓ Paleta de cores salva com sucesso!");
   });
 
   document.getElementById("btn-reset-theme")?.addEventListener("click", () => {
     currentConfig.theme = { ...DEFAULT_STUDIO_CONFIG.theme };
     applyThemeVariables(currentConfig.theme);
     syncStudioFormFields();
-    saveStudioConfig(currentConfig);
-    showStudioToast("Cores restauradas para o padrão Imperial Ukiyo-e");
+    const saved = saveStudioConfig(currentConfig);
+    if (saved !== false) showStudioToast("Cores restauradas para o padrão Imperial Ukiyo-e");
   });
 
   // ── Texts & Artworks Handling ──
@@ -1335,8 +1346,8 @@ function initStudio() {
     };
 
     applyCustomTexts(currentConfig.texts, currentConfig.artworks);
-    saveStudioConfig(currentConfig);
-    showStudioToast("✓ Textos e ilustrações atualizados no portfólio!");
+    const saved = saveStudioConfig(currentConfig);
+    if (saved !== false) showStudioToast("✓ Textos e ilustrações atualizados no portfólio!");
   });
 
   document.getElementById("btn-reset-texts")?.addEventListener("click", () => {
@@ -1344,27 +1355,69 @@ function initStudio() {
     currentConfig.artworks = { ...DEFAULT_STUDIO_CONFIG.artworks };
     applyCustomTexts(currentConfig.texts, currentConfig.artworks);
     syncStudioFormFields();
-    saveStudioConfig(currentConfig);
-    showStudioToast("Textos originais restaurados.");
+    const saved = saveStudioConfig(currentConfig);
+    if (saved !== false) showStudioToast("Textos originais restaurados.");
   });
+
+  function compressImage(file, maxWidth = 1200, maxHeight = 900, quality = 0.75) {
+    return new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onload = (evt) => {
+        const img = new Image();
+        img.onload = () => {
+          const canvas = document.createElement("canvas");
+          let { width, height } = img;
+          
+          if (width > maxWidth || height > maxHeight) {
+            const ratio = Math.min(maxWidth / width, maxHeight / height);
+            width *= ratio;
+            height *= ratio;
+          }
+          
+          canvas.width = width;
+          canvas.height = height;
+          
+          const ctx = canvas.getContext("2d");
+          ctx.drawImage(img, 0, 0, width, height);
+          
+          const dataUrl = canvas.toDataURL("image/webp", quality);
+          resolve(dataUrl);
+        };
+        img.src = evt.target.result;
+      };
+      reader.readAsDataURL(file);
+    });
+  }
 
   // Local File Uploads for Section Artworks
   function bindArtworkFileUploader(inputId, textTargetId, artworkKey) {
     const fileInput = document.getElementById(inputId);
-    fileInput?.addEventListener("change", (e) => {
+    fileInput?.addEventListener("change", async (e) => {
       const file = e.target.files[0];
       if (!file) return;
-      const reader = new FileReader();
-      reader.onload = (evt) => {
-        const dataUrl = evt.target.result;
+      
+      try {
+        showStudioToast("Processando imagem...");
+        const dataUrl = await compressImage(file);
+        
+        if (dataUrl.length > 4 * 1024 * 1024) {
+          showStudioToast("⚠️ Imagem muito grande mesmo após compressão. Tente uma resolução menor.");
+          return;
+        }
+        
         currentConfig.artworks[artworkKey] = dataUrl;
         const textTarget = document.getElementById(textTargetId);
         if (textTarget) textTarget.value = "[Foto Customizada Carregada]";
         applyCustomTexts(currentConfig.texts, currentConfig.artworks);
-        saveStudioConfig(currentConfig);
-        showStudioToast(`✓ Nova ilustração carregada com sucesso!`);
-      };
-      reader.readAsDataURL(file);
+        
+        const saved = saveStudioConfig(currentConfig);
+        if (saved !== false) {
+          showStudioToast("✓ Nova ilustração carregada e salva!");
+        }
+      } catch (err) {
+        console.error("Erro ao processar imagem:", err);
+        showStudioToast("⚠️ Erro ao processar a imagem.");
+      }
     });
   }
 
@@ -1455,24 +1508,48 @@ function initStudio() {
   });
 
   // Upload Local Photos / Videos
-  document.getElementById("p-media-file-input")?.addEventListener("change", (e) => {
+  document.getElementById("p-media-file-input")?.addEventListener("change", async (e) => {
     const files = Array.from(e.target.files || []);
     if (!files.length) return;
 
-    files.forEach(file => {
-      const reader = new FileReader();
+    for (const file of files) {
       const isVideo = file.type.startsWith("video/");
-      reader.onload = (evt) => {
-        tempMediaItems.push({
-          type: isVideo ? "video" : "image",
-          src: evt.target.result,
-          full: evt.target.result,
-          label: file.name
-        });
-        renderMediaPreviews();
-      };
-      reader.readAsDataURL(file);
-    });
+      if (isVideo) {
+        const reader = new FileReader();
+        reader.onload = (evt) => {
+          tempMediaItems.push({
+            type: "video",
+            src: evt.target.result,
+            full: evt.target.result,
+            label: file.name
+          });
+          renderMediaPreviews();
+        };
+        reader.readAsDataURL(file);
+      } else {
+        try {
+          showStudioToast("Processando imagem...");
+          const dataUrl = await compressImage(file, 1200, 900, 0.75);
+          
+          if (dataUrl.length > 3 * 1024 * 1024) {
+            showStudioToast("⚠️ Imagem muito grande. Tente uma resolução menor.");
+            continue;
+          }
+          
+          tempMediaItems.push({
+            type: "image",
+            src: dataUrl,
+            full: dataUrl,
+            label: file.name
+          });
+          renderMediaPreviews();
+          showStudioToast("✓ Imagem adicionada ao projeto!");
+        } catch (err) {
+          console.error("Erro ao processar imagem do projeto:", err);
+          showStudioToast("⚠️ Erro ao processar a imagem.");
+        }
+      }
+    }
   });
 
   // Open Form to Create New Project
@@ -1523,10 +1600,12 @@ function initStudio() {
   function deleteProject(id) {
     if (!confirm("Tem certeza que deseja excluir esta obra do portfólio?")) return;
     currentConfig.projects = currentConfig.projects.filter(p => p.id !== id);
-    saveStudioConfig(currentConfig);
-    renderPortfolioProjects(currentConfig.projects);
-    renderStudioProjectsList();
-    showStudioToast("Obra excluída.");
+    const saved = saveStudioConfig(currentConfig);
+    if (saved !== false) {
+      renderPortfolioProjects(currentConfig.projects);
+      renderStudioProjectsList();
+      showStudioToast("Obra excluída.");
+    }
   }
 
   // Save Project Form
@@ -1561,11 +1640,13 @@ function initStudio() {
       currentConfig.projects.push(projectData);
     }
 
-    saveStudioConfig(currentConfig);
-    renderPortfolioProjects(currentConfig.projects);
-    renderStudioProjectsList();
-    projectFormEl.style.display = "none";
-    showStudioToast(`✓ Obra "${title}" salva com sucesso!`);
+    const saved = saveStudioConfig(currentConfig);
+    if (saved !== false) {
+      renderPortfolioProjects(currentConfig.projects);
+      renderStudioProjectsList();
+      projectFormEl.style.display = "none";
+      showStudioToast(`✓ Obra "${title}" salva com sucesso!`);
+    }
   });
 
   // ── Backup & Export Handling ──
@@ -1597,8 +1678,8 @@ function initStudio() {
         applyCustomTexts(currentConfig.texts, currentConfig.artworks);
         renderPortfolioProjects(currentConfig.projects);
         syncStudioFormFields();
-        saveStudioConfig(currentConfig);
-        showStudioToast("✓ Configuração importada e aplicada com sucesso!");
+        const saved = saveStudioConfig(currentConfig);
+        if (saved !== false) showStudioToast("✓ Configuração importada e aplicada com sucesso!");
       } catch (err) {
         alert("Erro ao processar o arquivo JSON. Verifique a formatação.");
       }
@@ -1626,7 +1707,8 @@ function initStudio() {
     applyCustomTexts(currentConfig.texts, currentConfig.artworks);
     renderPortfolioProjects(currentConfig.projects);
     syncStudioFormFields();
-    showStudioToast("Padrões de fábrica restaurados.");
+    const saved = saveStudioConfig(currentConfig);
+    if (saved !== false) showStudioToast("Padrões de fábrica restaurados.");
   });
 }
 
