@@ -3,208 +3,1069 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portfólio de João Pedro — produtos digitais, interfaces e inteligência artificial.">
-  <meta name="theme-color" content="#000000">
-  <title>João Pedro — Creative Developer</title>
+  <meta name="description" content="João Pedro (alvz/dev) — Creative Developer & Senior Frontend Engineer. Produtos digitais onde engenharia de ponta, inteligência artificial e direção visual operam como uma obra só.">
+  <meta name="theme-color" content="#E9E3D4">
+  <title>João Pedro — Creative Developer · alvz/dev</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;600;700;900&family=Playfair+Display:ital,wght@0,600;0,900;1,600;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script type="importmap">
     {
       "imports": {
-        "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
-        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+        "three": "https://cdn.jsdelivr.net/npm/three@0.174.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.174.0/examples/jsm/"
       }
     }
   </script>
 </head>
 <body>
-  <a class="skip-link" href="#projetos">Ir para os projetos</a>
+  <a class="skip-link" href="#main-content">Ir para o conteúdo principal</a>
 
-  <header class="site-header" data-header>
-    <a class="brand" href="#inicio" aria-label="Alvz.dev — início">alvz<span>/</span>dev</a>
-    <nav class="nav-links" aria-label="Navegação principal">
-      <a href="#manifesto">Manifesto</a>
-      <a href="#projetos">Projetos</a>
+  <!-- Broadsheet Header Navigation -->
+  <header class="site-header" data-header role="banner">
+    <a class="brand" href="#inicio" aria-label="alvz/dev — página inicial">
+      <span class="brand-mark">alvz</span>
+      <span class="brand-separator" aria-hidden="true">/</span>
+      <span class="brand-type">dev</span>
+      <span class="brand-seal-chop" id="brand-chop-seal" role="button" tabindex="0" title="[ALVZ STUDIO] Clique 3x para abrir a bancada secreta">印</span>
+    </a>
+
+    <nav class="nav-primary" aria-label="Navegação principal">
+      <a href="#sobre"><span class="nav-index">01.</span>Sobre</a>
+      <a href="#projetos"><span class="nav-index">02.</span>Projetos</a>
+      <a href="#habilidades"><span class="nav-index">03.</span>Habilidades</a>
+      <a href="#contato"><span class="nav-index">04.</span>Contato</a>
     </nav>
-    <a class="nav-contact" href="#contato">Contato <span aria-hidden="true">↗</span></a>
+
+    <a class="nav-cta" href="#contato">
+      <span class="pulse-dot" aria-hidden="true"></span>
+      Disponível [BR/Remote]
+      <span aria-hidden="true">→</span>
+    </a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-primary" aria-label="Abrir menu de navegação">
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+    </button>
   </header>
 
-  <main>
-    <section class="hero scroll-scene" id="inicio" data-scroll-scene>
-      <div class="hero-grid" aria-hidden="true"></div>
-      <div class="hero-copy">
-        <p class="eyebrow"><span>Creative developer</span><span>Brasil / 2026</span></p>
-        <h1>
-          <span>Ideias com</span>
-          <em>presença.</em>
-        </h1>
-        <div class="hero-bottom">
-          <p>Eu sou João Pedro. Crio produtos digitais onde código, inteligência artificial e direção visual trabalham como uma coisa só.</p>
+  <main id="main-content">
+    <!-- HERO SECTION (00 / 序) -->
+    <section class="hero" id="inicio" data-scroll-scene aria-labelledby="hero-title">
+      <div class="hero-meta-bar" aria-hidden="true">
+        <span>[ PORTFOLIO / ED. 2026 ]</span>
+        <span class="colophon">JAPANESE VISUAL IDENTITY · BROADSHEET SPEC</span>
+        <span>[ BRASIL / GLOBAL REMOTE ]</span>
+      </div>
+
+      <div class="hero-composition">
+        <div class="hero-text">
+          <div class="chapter-marker" aria-hidden="true">
+            <span class="chapter-kanji">序</span>
+            <span>Chapter 00 / Prologue</span>
+          </div>
+
+          <h1 id="hero-title" class="hero-headline">
+            <span class="hero-line-1">Ideias com</span>
+            <span class="hero-line-2"><em>presença.</em></span>
+          </h1>
+
+          <p class="hero-copy">
+            Crio produtos digitais onde código de alta performance, inteligência artificial e direção visual operam como uma coisa só. Arquiteturas sólidas com impacto estético inconfundível.
+          </p>
+
           <div class="hero-actions">
-            <a class="button-primary" href="#projetos">Explorar projetos <span aria-hidden="true">↓</span></a>
-            <a class="button-text" href="#contato">Disponível para criar</a>
+            <a class="btn btn-seal" href="#projetos">
+              Ver projetos <span aria-hidden="true">→</span>
+            </a>
+            <a class="btn btn-ghost" href="#contato">
+              Iniciar diálogo
+            </a>
+          </div>
+
+          <div class="hero-tags-mono" style="font-family: var(--font-mono); font-size: var(--text-micro); color: var(--nigori); letter-spacing: 0.08em; text-transform: uppercase;">
+            [ REACT · TYPESCRIPT · THREE.JS · AI WORKFLOWS · DESIGN DIRECTION ]
+          </div>
+        </div>
+
+        <div class="hero-art-col">
+          <div class="hero-art-mount bracket-corner">
+            <div class="hero-art-image-wrapper">
+              <img src="assets/ukiyo-e/dragon-hero.jpg" alt="Xilogravura ukiyo-e de um dragão mítico japonês com escamas azul-índigo e chamas carmesim entre nuvens estilizadas e pinheiros" width="1280" height="880" fetchpriority="high">
+            </div>
+            <div class="hero-tategaki-ribbon" aria-hidden="true">
+              <span class="tategaki">デジタル職人 · 技術と美学</span>
+            </div>
+            <div class="hero-art-caption">
+              <span>図版 00 · 龍雲飛翔図 [RYŪ-UN]</span>
+              <span class="hanko-stamp-sm" aria-hidden="true">作</span>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="crown-stage" role="img" aria-label="Coroa tridimensional de metal cromado escuro, suspensa e reagindo ao movimento e à rolagem">
-        <div class="crown-fallback" aria-hidden="true">♛</div>
-        <canvas id="crown-canvas" aria-hidden="true"></canvas>
-        <div class="object-meta" aria-hidden="true">
-          <span>Object / 001</span>
-          <span>Dark chrome</span>
-        </div>
-        <p class="interaction-hint" aria-hidden="true">Mova · role · observe</p>
-      </div>
-
-      <div class="scroll-cue" aria-hidden="true"><span>Scroll to enter</span><i></i></div>
-    </section>
-
-    <section class="manifesto scroll-scene" id="manifesto" data-scroll-scene>
-      <div class="manifesto-sticky">
-        <p class="section-code">02 / Manifesto</p>
-        <div class="manifesto-copy">
-          <span class="manifesto-line">Código é matéria.</span>
-          <span class="manifesto-line">Intenção é forma.</span>
-          <span class="manifesto-line accent">Experiência é presença.</span>
-        </div>
-        <p class="manifesto-note">Não construo apenas telas. Construo sistemas que têm voz, ritmo e uma razão para existir.</p>
+      <div class="scroll-indicator" aria-hidden="true">
+        <span class="scroll-cue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 4v16M8 12l4 4 4-4"/>
+          </svg>
+          <span>Role para explorar</span>
+        </span>
+        <span>目録 / INDEX · EST. 2026</span>
       </div>
     </section>
 
-    <section class="projects" id="projetos">
-      <header class="section-heading reveal">
-        <div>
-          <p class="section-code">03 / Trabalhos selecionados</p>
-          <h2>Quatro projetos.<br><span>Uma assinatura.</span></h2>
+    <!-- MANIFESTO / ABOUT SECTION (01 / 道) -->
+    <section class="manifesto" id="sobre" data-scroll-scene aria-labelledby="manifesto-title">
+      <div class="manifesto-container">
+        <div class="manifesto-header">
+          <div class="chapter-marker" aria-hidden="true">
+            <span class="chapter-kanji">道</span>
+            <span>Chapter 01 / Philosophy</span>
+          </div>
+          <span style="font-family: var(--font-mono); font-size: var(--text-micro); color: var(--nigori); letter-spacing: 0.1em; text-transform: uppercase;">[ ARQUITETURA & CRAFT ]</span>
         </div>
-        <p>Produtos autorais criados para resolver problemas reais — com personalidade, precisão técnica e atenção obsessiva aos detalhes.</p>
-      </header>
 
-      <article class="project project-featured scroll-scene reveal" data-scroll-scene style="--project-tone:#c7c9d0">
-        <div class="project-visual" data-parallax>
-          <div class="carousel" data-carousel aria-label="Imagens do projeto Alchemist">
-            <div class="carousel-track">
-              <figure class="carousel-slide">
-                <button class="image-zoom" type="button" data-lightbox-image data-gallery="Alchemist" data-full="assets/alchemist/landing-full.webp" aria-label="Ampliar landing page do Alchemist">
-                  <img src="assets/alchemist/landing.webp" width="423" height="940" alt="Landing page do Alchemist RPG" loading="lazy" decoding="async">
-                </button>
-              </figure>
-              <figure class="carousel-slide">
-                <button class="image-zoom" type="button" data-lightbox-image data-gallery="Alchemist" data-full="assets/alchemist/dashboard-full.webp" aria-label="Ampliar dashboard do Alchemist">
-                  <img src="assets/alchemist/dashboard.webp" width="423" height="940" alt="Dashboard do Alchemist RPG" loading="lazy" decoding="async">
-                </button>
-              </figure>
-              <figure class="carousel-slide">
-                <button class="image-zoom" type="button" data-lightbox-image data-gallery="Alchemist" data-full="assets/alchemist/characters-full.webp" aria-label="Ampliar gestão de personagens do Alchemist">
-                  <img src="assets/alchemist/characters.webp" width="423" height="940" alt="Gestão de personagens do Alchemist RPG" loading="lazy" decoding="async">
-                </button>
-              </figure>
+        <div class="manifesto-composition">
+          <div class="manifesto-art-col">
+            <div class="manifesto-art-frame bracket-corner">
+              <div class="manifesto-art-image">
+                <img src="assets/ukiyo-e/oni-samurai.jpg" alt="Xilogravura ukiyo-e de um guerreiro samurai com máscara Oni em armadura azul índigo entre nuvens de fumaça e flores de cerejeira" width="1024" height="768">
+              </div>
+              <div class="manifesto-art-badge">
+                <span>図版 01 · 鬼神武者装束図 [ONI-SAMURAI]</span>
+                <span class="hanko-seal square" aria-hidden="true" style="width:24px;height:24px;font-size:0.75rem;">道</span>
+              </div>
             </div>
-            <div class="carousel-controls">
-              <div class="carousel-dots" aria-label="Selecionar imagem"></div>
-              <div class="carousel-arrows">
-                <button class="carousel-arrow prev" type="button" aria-label="Imagem anterior">←</button>
-                <button class="carousel-arrow next" type="button" aria-label="Próxima imagem">→</button>
+          </div>
+
+          <div class="manifesto-text-col">
+            <h2 id="manifesto-title" class="manifesto-headline">
+              <span class="manifesto-line">Código é matéria.</span>
+              <span class="manifesto-line">Intenção é forma.</span>
+              <span class="manifesto-line accent">Experiência é presença.</span>
+            </h2>
+
+            <p class="manifesto-body">
+              Não construo apenas telas funcionais. Construo ecossistemas digitais que têm voz, ritmo e uma razão visceral para existir. Da arquitetura do estado ao peso do pixel, cada decisão expressa clareza técnica e intencionalidade artística.
+            </p>
+
+            <div class="manifesto-pillars">
+              <div class="pillar-item">
+                <span class="pillar-num">01 / RIGOR</span>
+                <div class="pillar-title">Engenharia Limpa</div>
+                <p class="pillar-desc">TypeScript estrito, componentes desacoplados e padrões arquiteturais previsíveis.</p>
+              </div>
+              <div class="pillar-item">
+                <span class="pillar-num">02 / VELOCIDADE</span>
+                <div class="pillar-title">Performance Real</div>
+                <p class="pillar-desc">Frame budget a 60fps, renderização eficiente, sem dependências supérfluas.</p>
+              </div>
+              <div class="pillar-item">
+                <span class="pillar-num">03 / IDENTIDADE</span>
+                <div class="pillar-title">Direção Autoral</div>
+                <p class="pillar-desc">Design com personalidade que rejeita os templates pasteurizados do mercado.</p>
+              </div>
+            </div>
+
+            <div class="manifesto-seal" aria-hidden="true">
+              <svg class="seal-stamp" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="46" fill="none" stroke="#B51225" stroke-width="2.5"/>
+                <circle cx="50" cy="50" r="39" fill="none" stroke="#B51225" stroke-width="1"/>
+                <text x="50" y="58" text-anchor="middle" font-family="Noto Serif JP" font-size="28" font-weight="900" fill="#B51225">作</text>
+                <text x="50" y="80" text-anchor="middle" font-family="JetBrains Mono" font-size="8" font-weight="700" fill="#B51225">ALVZ/DEV</text>
+              </svg>
+              <div class="manifesto-seal-text">
+                <strong>Selo de Autoria</strong>
+                <span>Engenharia & Design por João Pedro</span>
               </div>
             </div>
           </div>
         </div>
-        <div class="project-copy">
-          <div class="project-meta"><span>01</span><span>Projeto principal</span><span>Em evolução</span></div>
-          <h3>Alchemist</h3>
-          <p>O espaço de trabalho definitivo para mestres e jogadores de RPG. Campanhas, personagens, NPCs e sessões reunidos em uma experiência dark-fantasy imersiva.</p>
-          <div class="project-tags"><span>React</span><span>TypeScript</span><span>SaaS</span><span>Product design</span></div>
-          <span class="project-status"><i></i>Produto em construção contínua</span>
-        </div>
-      </article>
-
-      <article class="project scroll-scene reveal" data-scroll-scene style="--project-tone:#d1ff63">
-        <div class="project-visual" data-parallax>
-          <div class="carousel" data-carousel aria-label="Imagens e conceitos do Nexus Agent">
-            <div class="carousel-track">
-              <figure class="carousel-slide">
-                <button class="image-zoom" type="button" data-lightbox-image data-gallery="Nexus Agent" data-full="assets/nexus/nexus-home-full.webp" aria-label="Ampliar interface inicial do Nexus Agent">
-                  <img class="project-screenshot" src="assets/nexus/nexus-home.webp" width="1280" height="625" alt="Interface inicial do Nexus Agent" loading="lazy" decoding="async">
-                </button>
-              </figure>
-              <figure class="carousel-slide"><div class="concept concept-nexus"><div class="concept-top"><span>BUILD / MODE</span><span>CONNECTED</span></div><div class="provider-list"><span>OpenAI <i>Online</i></span><span>Claude <i>Online</i></span><span>NVIDIA <i>Online</i></span><span>Your API key <i>Secure</i></span></div></div></figure>
-              <figure class="carousel-slide"><div class="concept concept-nexus"><div class="concept-top"><span>WORKSPACE / 04</span><span>SHIPPING</span></div><div class="code-surface"><i></i><i></i><i></i><strong>Interface without terminal fatigue.</strong><p>Plan · Build · Review · Ship</p></div></div></figure>
-            </div>
-            <div class="carousel-controls"><div class="carousel-dots" aria-label="Selecionar imagem"></div><div class="carousel-arrows"><button class="carousel-arrow prev" type="button" aria-label="Imagem anterior">←</button><button class="carousel-arrow next" type="button" aria-label="Próxima imagem">→</button></div></div>
-          </div>
-        </div>
-        <div class="project-copy">
-          <div class="project-meta"><span>02</span><span>AI developer tool</span><span>Disponível</span></div>
-          <h3>Nexus Agent</h3>
-          <p>Um agente de IA focado em programação que abandona a mesmice dos terminais. Funciona com sua própria chave de API — NVIDIA, Claude, OpenAI e outros provedores.</p>
-          <div class="project-tags"><span>AI agents</span><span>Multi-provider</span><span>Developer experience</span></div>
-          <a class="project-link" href="https://nexus-your-ai-coder.vercel.app/" target="_blank" rel="noreferrer">Visitar projeto <span aria-hidden="true">↗</span></a>
-        </div>
-      </article>
-
-      <article class="project scroll-scene reveal" data-scroll-scene style="--project-tone:#8ab4ff">
-        <div class="project-visual" data-parallax>
-          <div class="carousel" data-carousel aria-label="Imagens e conceitos do IA-OS">
-            <div class="carousel-track">
-              <figure class="carousel-slide">
-                <button class="image-zoom" type="button" data-lightbox-image data-gallery="IA-OS" data-full="assets/ia-os/ia-os-home-full.webp" aria-label="Ampliar workspace do IA-OS">
-                  <img class="project-screenshot iaos-screenshot" src="assets/ia-os/ia-os-home.webp" width="1280" height="634" alt="Workspace inteligente do IA-OS" loading="lazy" decoding="async">
-                </button>
-              </figure>
-              <figure class="carousel-slide"><div class="concept concept-os"><div class="concept-top"><span>IA—OS / FOCUS</span><span>LIVE</span></div><div class="os-panels"><span>Contexto<small>12 fontes conectadas</small></span><span>Agenda<small>Próximo: deep work</small></span><span>Ações<small>3 automatizadas</small></span></div></div></figure>
-              <figure class="carousel-slide"><div class="concept concept-os"><div class="concept-top"><span>IA—OS / FLOW</span><span>SIMPLIFY</span></div><div class="flow-line"><i></i><strong>Um sistema.<br>Menos ruído.</strong><i></i></div></div></figure>
-            </div>
-            <div class="carousel-controls"><div class="carousel-dots" aria-label="Selecionar imagem"></div><div class="carousel-arrows"><button class="carousel-arrow prev" type="button" aria-label="Imagem anterior">←</button><button class="carousel-arrow next" type="button" aria-label="Próxima imagem">→</button></div></div>
-          </div>
-        </div>
-        <div class="project-copy">
-          <div class="project-meta"><span>03</span><span>Sistema experimental</span><span>Em desenvolvimento</span></div>
-          <h3>IA-OS</h3>
-          <p>Um sistema operacional virtual com o objetivo de simplificar a vida moderna, conectando contexto, tarefas e ferramentas em uma camada inteligente.</p>
-          <div class="project-tags"><span>Artificial intelligence</span><span>OS concept</span><span>Productivity</span></div>
-          <span class="project-status"><i></i>Em breve</span>
-        </div>
-      </article>
-
-      <article class="project scroll-scene reveal" data-scroll-scene style="--project-tone:#ff8ca5">
-        <div class="project-visual" data-parallax>
-          <div class="carousel" data-carousel aria-label="Conceitos visuais da Galeria de Artistas">
-            <div class="carousel-track">
-              <figure class="carousel-slide"><div class="concept concept-gallery"><div class="art-piece art-one"></div><div class="art-caption"><span>Obra / 001</span><strong>Novos olhares.</strong><small>Arte independente encontra seu público.</small></div></div></figure>
-              <figure class="carousel-slide"><div class="concept concept-gallery"><div class="gallery-grid"><i></i><i></i><i></i><i></i></div><div class="art-caption"><span>Descobrir</span><strong>Colecione o singular.</strong></div></div></figure>
-              <figure class="carousel-slide"><div class="concept concept-gallery"><div class="artist-card"><span>Artista em destaque</span><strong>Forma, matéria<br>e identidade.</strong><button type="button" tabindex="-1">Ver coleção ↗</button></div></div></figure>
-            </div>
-            <div class="carousel-controls"><div class="carousel-dots" aria-label="Selecionar imagem"></div><div class="carousel-arrows"><button class="carousel-arrow prev" type="button" aria-label="Imagem anterior">←</button><button class="carousel-arrow next" type="button" aria-label="Próxima imagem">→</button></div></div>
-          </div>
-        </div>
-        <div class="project-copy">
-          <div class="project-meta"><span>04</span><span>Marketplace criativo</span><span>Em desenvolvimento</span></div>
-          <h3>Galeria de Artistas</h3>
-          <p>Uma galeria virtual onde artistas independentes podem publicar, apresentar e vender suas artes em um espaço que valoriza cada obra.</p>
-          <div class="project-tags"><span>Marketplace</span><span>Art platform</span><span>Community</span></div>
-          <span class="project-status"><i></i>Em breve</span>
-        </div>
-      </article>
+      </div>
     </section>
 
-    <section class="contact scroll-scene" id="contato" data-scroll-scene>
-      <p class="section-code">04 / Próximo capítulo</p>
-      <h2 class="reveal">Vamos criar algo<br><span>impossível de ignorar.</span></h2>
-      <div class="contact-row">
-        <a class="contact-email" href="mailto:joaopedro1083alves@gmail.com">joaopedro1083alves@gmail.com <span aria-hidden="true">↗</span></a>
-        <div class="social-links"><a href="https://github.com/alxzyc" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://linkedin.com/joão-pedro-alves-lacerda-de-jesus-69a06b3b8" target="_blank" rel="noreferrer">LinkedIn ↗</a></div>
+    <!-- PROJECTS SHOWCASE SECTION (02 / 企) -->
+    <section class="projects" id="projetos" data-scroll-scene aria-labelledby="projects-title">
+      <header class="section-header">
+        <div class="chapter-marker" aria-hidden="true">
+          <span class="chapter-kanji">企</span>
+          <span>Chapter 02 / Selected Works</span>
+        </div>
+        <h2 id="projects-title" class="section-headline">Quatro projetos.<br><span>Uma assinatura.</span></h2>
+        <p class="section-lead">Produtos autorais concebidos e implementados de ponta a ponta — combinando rigor arquitetural, ergonomia de uso e identidade visual marcante.</p>
+      </header>
+
+      <div class="projects-container" id="projects-container">
+        <!-- FEATURED PROJECT: ALCHEMIST RPG -->
+        <article class="project-featured bracket-corner" data-project="alchemist">
+          <div class="project-visual">
+            <div class="project-carousel" data-carousel aria-label="Imagens do projeto Alchemist">
+              <div class="carousel-track">
+                <figure class="carousel-slide">
+                  <button class="image-zoom" type="button" data-lightbox-image data-gallery="Alchemist" data-full="assets/alchemist/landing-full.webp" aria-label="Ampliar landing page do Alchemist RPG">
+                    <img src="assets/alchemist/landing.webp" width="423" height="940" alt="Landing page do Alchemist RPG com tipografia dark fantasy">
+                  </button>
+                </figure>
+                <figure class="carousel-slide">
+                  <button class="image-zoom" type="button" data-lightbox-image data-gallery="Alchemist" data-full="assets/alchemist/dashboard-full.webp" aria-label="Ampliar dashboard de campanhas do Alchemist">
+                    <img src="assets/alchemist/dashboard.webp" width="423" height="940" alt="Dashboard do Alchemist RPG com gerenciamento de campanhas">
+                  </button>
+                </figure>
+                <figure class="carousel-slide">
+                  <button class="image-zoom" type="button" data-lightbox-image data-gallery="Alchemist" data-full="assets/alchemist/characters-full.webp" aria-label="Ampliar gestão de fichas de personagens do Alchemist">
+                    <img src="assets/alchemist/characters.webp" width="423" height="940" alt="Interface de gestão de personagens do Alchemist RPG">
+                  </button>
+                </figure>
+              </div>
+
+              <div class="carousel-controls">
+                <div class="carousel-dots" aria-label="Selecionar imagem"></div>
+                <div class="carousel-arrows">
+                  <button class="carousel-arrow prev" type="button" aria-label="Imagem anterior">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                  </button>
+                  <button class="carousel-arrow next" type="button" aria-label="Próxima imagem">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-copy">
+            <div>
+              <div class="project-meta">
+                <span class="project-number">01</span>
+                <span class="project-category">Projeto Principal · SaaS</span>
+                <span class="project-status">Em Evolução</span>
+              </div>
+              <h3 class="project-title">Alchemist</h3>
+              <p class="project-desc">
+                O espaço de trabalho definitivo para mestres e jogadores de RPG. Campanhas, fichas complexas de personagens, NPCs dinâmicos e cronologia de sessões orquestrados em uma interface dark-fantasy de imersão profunda.
+              </p>
+              <div class="project-tags">
+                <span>React</span>
+                <span>TypeScript</span>
+                <span>Tailwind CSS</span>
+                <span>Canvas API</span>
+                <span>State Engine</span>
+                <span>Product Design</span>
+              </div>
+            </div>
+
+            <div class="project-footer-actions">
+              <span class="project-status-inline">
+                <span class="status-dot" aria-hidden="true"></span>
+                Em desenvolvimento contínuo
+              </span>
+              <span class="hanko-seal square" aria-hidden="true" style="width:28px;height:28px;font-size:0.9rem;">錬</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- SECONDARY PROJECTS GRID (3-COLUMNS) -->
+        <div class="secondary-projects-grid">
+          <!-- PROJECT 02: NEXUS AGENT -->
+          <article class="project-card" data-project="nexus">
+            <div class="project-visual">
+              <div class="project-carousel" data-carousel aria-label="Imagens do Nexus Agent">
+                <div class="carousel-track">
+                  <figure class="carousel-slide">
+                    <button class="image-zoom" type="button" data-lightbox-image data-gallery="Nexus Agent" data-full="assets/nexus/nexus-home-full.webp" aria-label="Ampliar interface inicial do Nexus Agent">
+                      <img src="assets/nexus/nexus-home.webp" width="1280" height="625" alt="Interface inicial do Nexus Agent">
+                    </button>
+                  </figure>
+                  <figure class="carousel-slide">
+                    <div class="concept concept-nexus">
+                      <div class="concept-top"><span>BUILD / MODE</span><span>CONNECTED</span></div>
+                      <div class="provider-list">
+                        <span>OpenAI <i>Online</i></span>
+                        <span>Claude <i>Online</i></span>
+                        <span>NVIDIA <i>Online</i></span>
+                        <span>Your API key <i>Secure</i></span>
+                      </div>
+                    </div>
+                  </figure>
+                  <figure class="carousel-slide">
+                    <div class="concept concept-nexus">
+                      <div class="concept-top"><span>WORKSPACE / 04</span><span>SHIPPING</span></div>
+                      <div class="code-surface">
+                        <strong>Interface sem fadiga de terminal.</strong>
+                        <p>Plan · Build · Review · Ship</p>
+                      </div>
+                    </div>
+                  </figure>
+                </div>
+
+                <div class="carousel-controls">
+                  <div class="carousel-dots" aria-label="Selecionar imagem"></div>
+                  <div class="carousel-arrows">
+                    <button class="carousel-arrow prev" type="button" aria-label="Imagem anterior">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                    </button>
+                    <button class="carousel-arrow next" type="button" aria-label="Próxima imagem">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-copy">
+              <div class="project-meta">
+                <span class="project-number">02</span>
+                <span class="project-category">AI Developer Tool</span>
+                <span class="project-status">Disponível</span>
+              </div>
+              <h3 class="project-title" style="font-size: var(--text-h3);">Nexus Agent</h3>
+              <p class="project-desc">
+                Agente de inteligência artificial focado em engenharia de software que substitui a mesmice dos terminais por ergonomia gráfica. Suporte a BYOK (NVIDIA, Claude, OpenAI).
+              </p>
+              <div class="project-tags">
+                <span>AI Agents</span>
+                <span>Multi-Provider</span>
+                <span>Dev Experience</span>
+              </div>
+              <div class="project-footer-actions">
+                <a class="project-link" href="https://nexus-your-ai-coder.vercel.app/" target="_blank" rel="noreferrer">
+                  Visitar projeto <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 03: IA-OS -->
+          <article class="project-card" data-project="ia-os">
+            <div class="project-visual">
+              <div class="project-carousel" data-carousel aria-label="Conceitos visuais do IA-OS">
+                <div class="carousel-track">
+                  <figure class="carousel-slide">
+                    <button class="image-zoom" type="button" data-lightbox-image data-gallery="IA-OS" data-full="assets/ia-os/ia-os-home-full.webp" aria-label="Ampliar interface do workspace IA-OS">
+                      <img src="assets/ia-os/ia-os-home.webp" width="1280" height="634" alt="Workspace inteligente do IA-OS">
+                    </button>
+                  </figure>
+                  <figure class="carousel-slide">
+                    <div class="concept concept-os">
+                      <div class="concept-top"><span>IA—OS / FOCUS</span><span>LIVE</span></div>
+                      <div class="os-panels">
+                        <span>Contexto <small>12 fontes conectadas</small></span>
+                        <span>Agenda <small>Próximo: deep work</small></span>
+                        <span>Ações <small>3 automatizadas</small></span>
+                      </div>
+                    </div>
+                  </figure>
+                  <figure class="carousel-slide">
+                    <div class="concept concept-os">
+                      <div class="concept-top"><span>IA—OS / FLOW</span><span>SIMPLIFY</span></div>
+                      <div class="flow-line">
+                        <strong>Um sistema unificado.<br>Zero dispersão.</strong>
+                      </div>
+                    </div>
+                  </figure>
+                </div>
+
+                <div class="carousel-controls">
+                  <div class="carousel-dots" aria-label="Selecionar imagem"></div>
+                  <div class="carousel-arrows">
+                    <button class="carousel-arrow prev" type="button" aria-label="Imagem anterior">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                    </button>
+                    <button class="carousel-arrow next" type="button" aria-label="Próxima imagem">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-copy">
+              <div class="project-meta">
+                <span class="project-number">03</span>
+                <span class="project-category">Sistema Operacional</span>
+                <span class="project-status">Em Design</span>
+              </div>
+              <h3 class="project-title" style="font-size: var(--text-h3);">IA-OS</h3>
+              <p class="project-desc">
+                Sistema operacional virtual experimental projetado para sintetizar contexto pessoal, projetos e fluxos autônomos em uma camada inteligente unificada.
+              </p>
+              <div class="project-tags">
+                <span>Inteligência Artificial</span>
+                <span>OS Concept</span>
+                <span>Productivity</span>
+              </div>
+              <div class="project-footer-actions">
+                <span class="project-status-inline">
+                  <span class="status-dot" aria-hidden="true"></span>
+                  Conceito em prototipagem
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 04: GALERIA DE ARTISTAS -->
+          <article class="project-card" data-project="galeria">
+            <div class="project-visual">
+              <div class="project-carousel" data-carousel aria-label="Conceitos visuais da Galeria de Artistas">
+                <div class="carousel-track">
+                  <figure class="carousel-slide">
+                    <div class="concept concept-gallery">
+                      <div class="concept-top"><span>GALERIA / 001</span><span>CURADORIA</span></div>
+                      <div class="art-caption">
+                        <span>Obra em Foco</span>
+                        <strong>Novos Olhares & Formas</strong>
+                        <p style="color:var(--nigori);font-size:0.75rem;margin-top:4px;">Arte independente encontra sua audiência sem intermediários predatórios.</p>
+                      </div>
+                    </div>
+                  </figure>
+                  <figure class="carousel-slide">
+                    <div class="concept concept-gallery">
+                      <div class="concept-top"><span>DESCOBERTA</span><span>ORIGINAL</span></div>
+                      <div class="gallery-grid"><i></i><i></i><i></i><i></i></div>
+                      <div class="art-caption">
+                        <strong>Colecione o singular.</strong>
+                      </div>
+                    </div>
+                  </figure>
+                  <figure class="carousel-slide">
+                    <div class="concept concept-gallery">
+                      <div class="concept-top"><span>COMUNIDADE</span><span>FEED</span></div>
+                      <div class="artist-card">
+                        <span>Artista em destaque</span>
+                        <strong>Forma, matéria e identidade.</strong>
+                        <button type="button" tabindex="-1">Ver coleção →</button>
+                      </div>
+                    </div>
+                  </figure>
+                </div>
+
+                <div class="carousel-controls">
+                  <div class="carousel-dots" aria-label="Selecionar imagem"></div>
+                  <div class="carousel-arrows">
+                    <button class="carousel-arrow prev" type="button" aria-label="Imagem anterior">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                    </button>
+                    <button class="carousel-arrow next" type="button" aria-label="Próxima imagem">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-copy">
+              <div class="project-meta">
+                <span class="project-number">04</span>
+                <span class="project-category">Marketplace Visual</span>
+                <span class="project-status">Em Design</span>
+              </div>
+              <h3 class="project-title" style="font-size: var(--text-h3);">Galeria de Artistas</h3>
+              <p class="project-desc">
+                Galeria e marketplace virtual onde artistas visuais independentes publicam, expõem e comercializam tiragens físicas e digitais em um ambiente de alto valor estético.
+              </p>
+              <div class="project-tags">
+                <span>Marketplace</span>
+                <span>Art Platform</span>
+                <span>Web3 Ready</span>
+              </div>
+              <div class="project-footer-actions">
+                <span class="project-status-inline">
+                  <span class="status-dot" aria-hidden="true"></span>
+                  Em desenvolvimento
+                </span>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
-      <footer><span>João Pedro · Creative Developer</span><span>Brasil · © 2026</span></footer>
+    </section>
+
+    <!-- SKILLS & CAPABILITIES SECTION (03 / 術) -->
+    <section class="skills" id="habilidades" data-scroll-scene aria-labelledby="skills-title">
+      <header class="section-header">
+        <div class="chapter-marker" aria-hidden="true">
+          <span class="chapter-kanji">術</span>
+          <span>Chapter 03 / Capabilities</span>
+        </div>
+        <h2 id="skills-title" class="section-headline">Ferramentas.<br><span>Linguagens. Arquitetura.</span></h2>
+        <p class="section-lead">A maestria técnica não é uma lista de palavras-chave, mas o domínio profundo das ferramentas que tornam o extraordinário viável.</p>
+      </header>
+
+      <div class="skills-composition">
+        <!-- COLUMN 1: FRONTEND & WEBGL -->
+        <div class="skills-column">
+          <span class="skills-kanji-num" aria-hidden="true">壱</span>
+          <h3 class="skills-category">Frontend & Creative Web</h3>
+          <div class="skills-tags">
+            <div class="skill-tag">
+              <span>React / Next.js</span>
+              <div class="skill-pips" aria-label="Nível: Especialista"><span class="pip active"></span><span class="pip active"></span><span class="pip active"></span></div>
+            </div>
+            <div class="skill-tag">
+              <span>TypeScript Estrito</span>
+              <div class="skill-pips" aria-label="Nível: Especialista"><span class="pip active"></span><span class="pip active"></span><span class="pip active"></span></div>
+            </div>
+            <div class="skill-tag">
+              <span>Three.js & WebGL</span>
+              <div class="skill-pips" aria-label="Nível: Avançado"><span class="pip active"></span><span class="pip active"></span><span class="pip"></span></div>
+            </div>
+            <div class="skill-tag">
+              <span>GSAP & Framer Motion</span>
+              <div class="skill-pips" aria-label="Nível: Avançado"><span class="pip active"></span><span class="pip active"></span><span class="pip"></span></div>
+            </div>
+            <div class="skill-tag">
+              <span>Tailwind & CSS Moderno</span>
+              <div class="skill-pips" aria-label="Nível: Especialista"><span class="pip active"></span><span class="pip active"></span><span class="pip active"></span></div>
+            </div>
+            <div class="skill-tag">
+              <span>Canvas API & Shaders</span>
+              <div class="skill-pips" aria-label="Nível: Intermediário"><span class="pip active"></span><span class="pip"></span><span class="pip"></span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COLUMN 2: AI & BACKEND -->
+        <div class="skills-column">
+          <span class="skills-kanji-num" aria-hidden="true">弐</span>
+          <h3 class="skills-category">AI Systems & Backend</h3>
+          <div class="skills-tags">
+            <div class="skill-tag">
+              <span>LLM Orchestration & APIs</span>
+              <div class="skill-pips" aria-label="Nível: Avançado"><span class="pip active"></span><span class="pip active"></span><span class="pip"></span></div>
+            </div>
+            <div class="skill-tag">
+              <span>Arquitetura Multi-Agentes</span>
+              <div class="skill-pips" aria-label="Nível: Avançado"><span class="pip active"></span><span class="pip active"></span><span class="pip"></span></div>
+            </div>
+            <div class="skill-tag">
+              <span>RAG & Vector Retrieval</span>
+              <div class="skill-pips" aria-label="Nível: Avançado"><span class="pip active"></span><span class="pip active"></span><span class="pip"></span></div>
+            </div>
+            <div class="skill-tag">
+              <span>Node.js & Edge Runtimes</span>
+              <div class="skill-pips" aria-label="Nível: Avançado"><span class="pip active"></span><span class="pip active"></span><span class="pip"></span></div>
+            </div>
+            <div class="skill-tag">
+              <span>Python & Automações</span>
+              <div class="skill-pips" aria-label="Nível: Intermediário"><span class="pip active"></span><span class="pip active"></span><span class="pip"></span></div>
+            </div>
+            <div class="skill-tag">
+              <span>API Design & WebSockets</span>
+              <div class="skill-pips" aria-label="Nível: Avançado"><span class="pip active"></span><span class="pip active"></span><span class="pip"></span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COLUMN 3: DESIGN DIRECTION & CRAFT -->
+        <div class="skills-column">
+          <span class="skills-kanji-num" aria-hidden="true">参</span>
+          <h3 class="skills-category">Design & Direção de Arte</h3>
+          <div class="skills-tags">
+            <div class="skill-tag">
+              <span>Product & UI/UX Design</span>
+              <div class="skill-pips" aria-label="Nível: Especialista"><span class="pip active"></span><span class="pip active"></span><span class="pip active"></span></div>
+            </div>
+            <div class="skill-tag">
+              <span>Design Systems & Tokens</span>
+              <div class="skill-pips" aria-label="Nível: Especialista"><span class="pip active"></span><span class="pip active"></span><span class="pip active"></span></div>
+            </div>
+            <div class="skill-tag">
+              <span>Motion & Microinterações</span>
+              <div class="skill-pips" aria-label="Nível: Avançado"><span class="pip active"></span><span class="pip active"></span><span class="pip"></span></div>
+            </div>
+            <div class="skill-tag">
+              <span>Tipografia Editorial</span>
+              <div class="skill-pips" aria-label="Nível: Especialista"><span class="pip active"></span><span class="pip active"></span><span class="pip active"></span></div>
+            </div>
+            <div class="skill-tag">
+              <span>Acessibilidade (WCAG AA)</span>
+              <div class="skill-pips" aria-label="Nível: Avançado"><span class="pip active"></span><span class="pip active"></span><span class="pip"></span></div>
+            </div>
+            <div class="skill-tag">
+              <span>Prototipagem de Alta Fidelidade</span>
+              <div class="skill-pips" aria-label="Nível: Especialista"><span class="pip active"></span><span class="pip active"></span><span class="pip active"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT & EPILOGUE SECTION (04 / 結) -->
+    <section class="contact" id="contato" data-scroll-scene aria-labelledby="contact-title">
+      <div class="contact-container">
+        <div class="manifesto-header">
+          <div class="chapter-marker" aria-hidden="true">
+            <span class="chapter-kanji">結</span>
+            <span>Chapter 04 / Epilogue</span>
+          </div>
+          <span style="font-family: var(--font-mono); font-size: var(--text-micro); color: var(--nigori); letter-spacing: 0.1em; text-transform: uppercase;">[ CONTATO DIRETO ]</span>
+        </div>
+
+        <div class="contact-composition">
+          <div class="contact-art-col">
+            <div class="contact-art-frame bracket-corner">
+              <div class="contact-art-image">
+                <img src="assets/ukiyo-e/tiger-botanical.jpg" alt="Xilogravura ukiyo-e de um tigre avançando entre bambuzais índigo e crisântemos vermelhos" width="1024" height="768">
+              </div>
+              <div class="contact-art-badge">
+                <span>図版 02 · 猛虎竹林菊華図 [TORA-KIKU]</span>
+                <span class="hanko-seal round" aria-hidden="true" style="width:24px;height:24px;font-size:0.75rem;">完</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-text-col">
+            <h2 id="contact-title" class="contact-headline">
+              Vamos criar algo<br><span>impossível de ignorar.</span>
+            </h2>
+
+            <p class="contact-lead">
+              Disponível para posições estratégicas de frontend, engenharia criativa, design engineering e desenvolvimento de produtos ambiciosos. Tem um projeto ou desafio à altura?
+            </p>
+
+            <div class="contact-details">
+              <a class="contact-email" href="mailto:joaopedro1083alves@gmail.com">
+                joaopedro1083alves@gmail.com
+                <span aria-hidden="true">→</span>
+              </a>
+
+              <div class="contact-social">
+                <a href="https://github.com/alxzyc" target="_blank" rel="noreferrer">
+                  GitHub <span aria-hidden="true">↗</span>
+                </a>
+                <a href="https://linkedin.com/in/joão-pedro-alves-lacerda-de-jesus-69a06b3b8" target="_blank" rel="noreferrer">
+                  LinkedIn <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-seal" aria-hidden="true">
+              <svg class="final-seal" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="60" cy="60" r="54" fill="none" stroke="#B51225" stroke-width="3"/>
+                <circle cx="60" cy="60" r="46" fill="none" stroke="#B51225" stroke-width="1.5"/>
+                <circle cx="60" cy="60" r="38" fill="none" stroke="#B51225" stroke-width="0.5"/>
+                <text x="60" y="68" text-anchor="middle" font-family="Noto Serif JP" font-size="30" font-weight="900" fill="#B51225">完</text>
+                <text x="60" y="94" text-anchor="middle" font-family="JetBrains Mono" font-size="7.5" font-weight="700" fill="#B51225">ALVZ/DEV · 2026</text>
+              </svg>
+              <div class="contact-seal-note">
+                <strong>Epílogo · Conclusão [KAN]</strong>
+                <span>Obra concluída · Pronta para novos desafios</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="site-footer">
+          <div>
+            <strong>João Pedro</strong> · Creative Developer & Senior Frontend Engineer
+          </div>
+          <div>
+            Brasil · © 2026 · <span class="colophon-kanji">版元 ALVZ STUDIO</span>
+          </div>
+        </footer>
+      </div>
     </section>
   </main>
 
+  <!-- Museum Lightbox Dialog for Full Resolution Previews -->
   <dialog class="lightbox" id="image-lightbox" aria-label="Visualização ampliada da imagem">
-    <div class="lightbox-bar"><span data-lightbox-title>Galeria do projeto</span><button class="lightbox-close" type="button" data-lightbox-close>Fechar ×</button></div>
-    <figure class="lightbox-figure"><img class="lightbox-image" alt=""><figcaption class="lightbox-caption" hidden></figcaption></figure>
-    <div class="lightbox-footer"><span class="lightbox-counter" aria-live="polite"></span><div class="lightbox-actions"><button class="lightbox-nav" type="button" data-lightbox-prev aria-label="Imagem anterior">←</button><button class="lightbox-nav" type="button" data-lightbox-next aria-label="Próxima imagem">→</button></div></div>
+    <div class="lightbox-bar">
+      <span data-lightbox-title>Galeria do projeto</span>
+      <button class="lightbox-close" type="button" data-lightbox-close aria-label="Fechar galeria ampliada">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        <span class="sr-only">Fechar</span>
+      </button>
+    </div>
+    <figure class="lightbox-figure">
+      <img class="lightbox-image" alt="">
+      <figcaption class="lightbox-caption" hidden></figcaption>
+    </figure>
+    <div class="lightbox-footer">
+      <span class="lightbox-counter" aria-live="polite"></span>
+      <div class="lightbox-actions">
+        <button class="lightbox-nav" type="button" data-lightbox-prev aria-label="Imagem anterior">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="lightbox-nav" type="button" data-lightbox-next aria-label="Próxima imagem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Floating Studio Access Pill (Visible when Studio is unlocked) -->
+  <button class="studio-floating-trigger" id="studio-floating-trigger" type="button" aria-label="Abrir estúdio de customização">
+    <span class="hanko-seal square" style="width:18px;height:18px;font-size:0.65rem;border-color:currentColor;color:inherit;" aria-hidden="true">工</span>
+    <span>Studio Ativo</span>
+  </button>
+
+  <!-- Studio Toast Feedback -->
+  <div class="studio-toast" id="studio-toast" role="status" aria-live="polite"></div>
+
+  <!-- HIDDEN STUDIO MODAL // 隠し工房 [KAKUSHI KŌBŌ] -->
+  <dialog class="studio-modal" id="alvz-studio-modal" aria-label="Bancada de Criação e Customização do Portfólio">
+    <div class="studio-window bracket-corner">
+      <header class="studio-header">
+        <div class="studio-title-wrap">
+          <span class="hanko-seal square" style="width:26px;height:26px;font-size:0.85rem;border-color:var(--shinsha);color:var(--shinsha);" aria-hidden="true">坊</span>
+          <div>
+            <h2 class="studio-title">ALVZ STUDIO // 隠し工房</h2>
+            <span class="studio-badge">Modo Criativo Exclusivo · Privado</span>
+          </div>
+        </div>
+        <button class="studio-close-btn" id="studio-close-btn" type="button" aria-label="Fechar estúdio">
+          <span>✕ Fechar [ESC]</span>
+        </button>
+      </header>
+
+      <nav class="studio-tabs" role="tablist">
+        <button class="studio-tab-btn is-active" type="button" data-tab="tab-projects" role="tab" aria-selected="true">
+          01. Projetos (Criar & Gerenciar)
+        </button>
+        <button class="studio-tab-btn" type="button" data-tab="tab-theme" role="tab" aria-selected="false">
+          02. Cores & Identidade
+        </button>
+        <button class="studio-tab-btn" type="button" data-tab="tab-content" role="tab" aria-selected="false">
+          03. Textos & Ilustrações
+        </button>
+        <button class="studio-tab-btn" type="button" data-tab="tab-export" role="tab" aria-selected="false">
+          04. Backup & Exportar
+        </button>
+      </nav>
+
+      <div class="studio-body">
+        <!-- TAB 01: PROJETOS -->
+        <section class="studio-panel is-active" id="tab-projects" role="tabpanel">
+          <div class="studio-section-title">
+            <span>Gerenciador de Obras & Projetos</span>
+            <button class="studio-btn studio-btn-primary studio-btn-sm" id="btn-new-project" type="button">
+              + Novo Projeto
+            </button>
+          </div>
+
+          <!-- Existing Projects List -->
+          <div class="studio-projects-list" id="studio-projects-list">
+            <!-- Rendered dynamically -->
+          </div>
+
+          <!-- Project Editor Form (Create / Edit) -->
+          <form class="studio-project-form" id="studio-project-form" style="display:none; background:var(--washi); padding:20px; border:2px solid var(--sumi); margin-top:16px;">
+            <div class="studio-section-title" style="font-size:1.15rem; margin-bottom:16px;">
+              <span id="project-form-mode-title">Adicionar Nova Obra / Projeto</span>
+            </div>
+
+            <input type="hidden" id="project-edit-id" value="">
+
+            <div class="studio-grid-3">
+              <div class="studio-field">
+                <label for="p-title">Título da Obra *</label>
+                <input class="studio-input" id="p-title" type="text" placeholder="Ex: Cyber Samurai AI" required>
+              </div>
+              <div class="studio-field">
+                <label for="p-number">Número / Índice</label>
+                <input class="studio-input" id="p-number" type="text" placeholder="Ex: 05">
+              </div>
+              <div class="studio-field">
+                <label for="p-status">Status de Produção</label>
+                <input class="studio-input" id="p-status" type="text" placeholder="Ex: Disponível / Em Evolução">
+              </div>
+            </div>
+
+            <div class="studio-grid-2" style="margin-top:12px;">
+              <div class="studio-field">
+                <label for="p-category">Categoria / Segmento</label>
+                <input class="studio-input" id="p-category" type="text" placeholder="Ex: SaaS / Creative Tool / Agente IA">
+              </div>
+              <div class="studio-field">
+                <label for="p-layout">Formato de Exibição no Portfólio</label>
+                <select class="studio-select" id="p-layout">
+                  <option value="card">Card Pôster Padrão (Grid 3 Colunas)</option>
+                  <option value="featured">Destaque Editorial Amplo (Espalhado Principal)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="studio-field" style="margin-top:12px;">
+              <label for="p-desc">Descrição Conceitual & Técnica *</label>
+              <textarea class="studio-textarea" id="p-desc" placeholder="Descreva o propósito do projeto, a solução arquitetural e o impacto gerado..." required></textarea>
+            </div>
+
+            <div class="studio-field" style="margin-top:12px;">
+              <label for="p-tags">Tecnologias & Stacks <span class="hint">(separadas por vírgula)</span></label>
+              <input class="studio-input" id="p-tags" type="text" placeholder="Ex: React, TypeScript, Three.js, Canvas API, Tailwind">
+            </div>
+
+            <div class="studio-grid-2" style="margin-top:12px;">
+              <div class="studio-field">
+                <label for="p-live-link">Link do Projeto / Demonstração (URL)</label>
+                <input class="studio-input" id="p-live-link" type="url" placeholder="https://meu-projeto.vercel.app">
+              </div>
+              <div class="studio-field">
+                <label for="p-github-link">Repositório GitHub (URL)</label>
+                <input class="studio-input" id="p-github-link" type="url" placeholder="https://github.com/usuario/repo">
+              </div>
+            </div>
+
+            <!-- Media Attachments (Photos & Videos) -->
+            <div class="studio-field" style="margin-top:16px; border-top:1px dashed var(--rule-medium); padding-top:14px;">
+              <label>Galeria de Mídia (Fotos, Capturas & Vídeos) <span class="hint">Adicione por URL ou faça upload</span></label>
+              
+              <div class="studio-grid-2" style="margin-top:8px;">
+                <div style="display:flex; gap:8px;">
+                  <input class="studio-input" id="p-media-url-input" type="url" placeholder="Cole a URL da imagem ou vídeo (mp4/webm/youtube)...">
+                  <button class="studio-btn studio-btn-secondary studio-btn-sm" id="btn-add-media-url" type="button" style="white-space:nowrap;">Adicionar URL</button>
+                </div>
+                <div style="display:flex; align-items:center; gap:8px;">
+                  <label class="studio-btn studio-btn-secondary studio-btn-sm" style="cursor:pointer; margin:0; width:100%; text-align:center;">
+                    📁 Upload do Computador
+                    <input type="file" id="p-media-file-input" accept="image/*,video/*" multiple style="display:none;">
+                  </label>
+                </div>
+              </div>
+
+              <!-- Media items container -->
+              <div class="media-items-grid" id="p-media-items-container">
+                <!-- Preview items inserted here -->
+              </div>
+            </div>
+
+            <div style="display:flex; gap:12px; margin-top:20px; border-top:2px solid var(--sumi); padding-top:16px;">
+              <button class="studio-btn studio-btn-primary" id="btn-save-project" type="submit">
+                ✓ Salvar Obra no Portfólio
+              </button>
+              <button class="studio-btn studio-btn-secondary" id="btn-cancel-project" type="button">
+                Cancelar
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <!-- TAB 02: CORES & IDENTIDADE -->
+        <section class="studio-panel" id="tab-theme" role="tabpanel">
+          <div class="studio-section-title">
+            <span>Paleta de Cores & Tonalidades do Portfólio</span>
+            <button class="studio-btn studio-btn-secondary studio-btn-sm" id="btn-reset-theme" type="button">Restaurar Cores Padrão</button>
+          </div>
+
+          <div>
+            <label style="font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase; font-weight:700; display:block; margin-bottom:8px;">
+              Temas Predefinidos (1-Clique)
+            </label>
+            <div class="theme-presets">
+              <div class="preset-card" data-preset="imperial">
+                <span class="preset-title">Padrão Ukiyo-e</span>
+                <div class="preset-swatches">
+                  <span style="background:#E9E3D4;"></span>
+                  <span style="background:#171717;"></span>
+                  <span style="background:#B51225;"></span>
+                  <span style="background:#263B68;"></span>
+                </div>
+              </div>
+              <div class="preset-card" data-preset="sumi-dark">
+                <span class="preset-title">Noite Sumi-e (Dark)</span>
+                <div class="preset-swatches">
+                  <span style="background:#151619;"></span>
+                  <span style="background:#F2EDE3;"></span>
+                  <span style="background:#D94A3C;"></span>
+                  <span style="background:#3C527D;"></span>
+                </div>
+              </div>
+              <div class="preset-card" data-preset="kyoto-forest">
+                <span class="preset-title">Floresta Kyoto</span>
+                <div class="preset-swatches">
+                  <span style="background:#E8E4DA;"></span>
+                  <span style="background:#14221A;"></span>
+                  <span style="background:#8C6D3F;"></span>
+                  <span style="background:#1F3A2B;"></span>
+                </div>
+              </div>
+              <div class="preset-card" data-preset="indigo-aizome">
+                <span class="preset-title">Aizome Profundo</span>
+                <div class="preset-swatches">
+                  <span style="background:#ECE7DC;"></span>
+                  <span style="background:#131B2A;"></span>
+                  <span style="background:#C43D2D;"></span>
+                  <span style="background:#1E335E;"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="color-controls-grid" style="margin-top:16px;">
+            <div class="color-picker-item">
+              <label style="font-family:var(--font-mono); font-size:0.72rem; text-transform:uppercase; font-weight:700;">
+                Papel Washi Ground (--washi)
+              </label>
+              <div class="color-picker-row">
+                <input type="color" id="color-washi" value="#E9E3D4">
+                <input type="text" class="color-hex-input" id="hex-washi" value="#E9E3D4">
+              </div>
+            </div>
+
+            <div class="color-picker-item">
+              <label style="font-family:var(--font-mono); font-size:0.72rem; text-transform:uppercase; font-weight:700;">
+                Preto Nanquim Sumi (--sumi)
+              </label>
+              <div class="color-picker-row">
+                <input type="color" id="color-sumi" value="#171717">
+                <input type="text" class="color-hex-input" id="hex-sumi" value="#171717">
+              </div>
+            </div>
+
+            <div class="color-picker-item">
+              <label style="font-family:var(--font-mono); font-size:0.72rem; text-transform:uppercase; font-weight:700;">
+                Vermelho Cinábrio (--shinsha)
+              </label>
+              <div class="color-picker-row">
+                <input type="color" id="color-shinsha" value="#B51225">
+                <input type="text" class="color-hex-input" id="hex-shinsha" value="#B51225">
+              </div>
+            </div>
+
+            <div class="color-picker-item">
+              <label style="font-family:var(--font-mono); font-size:0.72rem; text-transform:uppercase; font-weight:700;">
+                Azul Índigo Aizome (--aizome)
+              </label>
+              <div class="color-picker-row">
+                <input type="color" id="color-aizome" value="#263B68">
+                <input type="text" class="color-hex-input" id="hex-aizome" value="#263B68">
+              </div>
+            </div>
+
+            <div class="color-picker-item">
+              <label style="font-family:var(--font-mono); font-size:0.72rem; text-transform:uppercase; font-weight:700;">
+                Cinza Envelhecido (--nigori)
+              </label>
+              <div class="color-picker-row">
+                <input type="color" id="color-nigori" value="#77766F">
+                <input type="text" class="color-hex-input" id="hex-nigori" value="#77766F">
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:20px; border-top:2px solid var(--sumi); padding-top:16px;">
+            <button class="studio-btn studio-btn-primary" id="btn-apply-theme" type="button">
+              ✓ Aplicar Cores ao Vivo
+            </button>
+          </div>
+        </section>
+
+        <!-- TAB 03: TEXTOS & ILUSTRAÇÕES -->
+        <section class="studio-panel" id="tab-content" role="tabpanel">
+          <div class="studio-section-title">
+            <span>Editor de Textos & Ilustrações</span>
+            <button class="studio-btn studio-btn-secondary studio-btn-sm" id="btn-reset-texts" type="button">Restaurar Textos Originais</button>
+          </div>
+
+          <div class="studio-grid-2">
+            <div class="studio-field">
+              <label for="txt-hero-title1">Hero Título — Linha 1</label>
+              <input class="studio-input" id="txt-hero-title1" type="text" value="Ideias com">
+            </div>
+            <div class="studio-field">
+              <label for="txt-hero-title2">Hero Título — Linha 2 (Destaque Itálico)</label>
+              <input class="studio-input" id="txt-hero-title2" type="text" value="presença.">
+            </div>
+          </div>
+
+          <div class="studio-field">
+            <label for="txt-hero-copy">Hero Introdução / Bio</label>
+            <textarea class="studio-textarea" id="txt-hero-copy">Crio produtos digitais onde código de alta performance, inteligência artificial e direção visual operam como uma coisa só. Arquiteturas sólidas com impacto estético inconfundível.</textarea>
+          </div>
+
+          <div class="studio-field" style="border-top:1px dashed var(--rule-medium); padding-top:14px;">
+            <label for="txt-manifesto-body">Manifesto / Filosofia — Texto Principal</label>
+            <textarea class="studio-textarea" id="txt-manifesto-body">Não construo apenas telas funcionais. Construo ecossistemas digitais que têm voz, ritmo e uma razão visceral para existir. Da arquitetura do estado ao peso do pixel, cada decisão expressa clareza técnica e intencionalidade artística.</textarea>
+          </div>
+
+          <div class="studio-grid-2" style="border-top:1px dashed var(--rule-medium); padding-top:14px;">
+            <div class="studio-field">
+              <label for="txt-contact-email">E-mail de Contato Principal</label>
+              <input class="studio-input" id="txt-contact-email" type="email" value="joaopedro1083alves@gmail.com">
+            </div>
+            <div class="studio-field">
+              <label for="txt-contact-lead">Contato — Subtítulo / Chamada</label>
+              <input class="studio-input" id="txt-contact-lead" type="text" value="Disponível para posições estratégicas de frontend, engenharia criativa, design engineering e desenvolvimento de produtos ambiciosos. Tem um projeto ou desafio à altura?">
+            </div>
+          </div>
+
+          <!-- Illustrations Switcher -->
+          <div style="border-top:2px solid var(--sumi); padding-top:16px; margin-top:8px;">
+            <label style="font-family:var(--font-mono); font-size:0.8rem; text-transform:uppercase; font-weight:700; display:block; margin-bottom:12px;">
+              Ilustrações Ukiyo-e das Seções (Upload ou URL)
+            </label>
+
+            <div class="studio-grid-3">
+              <div class="studio-field">
+                <label>Hero (Dragão)</label>
+                <input class="studio-input" id="img-hero-input" type="text" placeholder="URL da imagem..." value="assets/ukiyo-e/dragon-hero.jpg">
+                <label class="studio-btn studio-btn-secondary studio-btn-sm" style="cursor:pointer; margin-top:6px; text-align:center;">
+                  Substituir Foto
+                  <input type="file" id="file-hero-img" accept="image/*" style="display:none;">
+                </label>
+              </div>
+
+              <div class="studio-field">
+                <label>Manifesto (Samurai Oni)</label>
+                <input class="studio-input" id="img-manifesto-input" type="text" placeholder="URL da imagem..." value="assets/ukiyo-e/oni-samurai.jpg">
+                <label class="studio-btn studio-btn-secondary studio-btn-sm" style="cursor:pointer; margin-top:6px; text-align:center;">
+                  Substituir Foto
+                  <input type="file" id="file-manifesto-img" accept="image/*" style="display:none;">
+                </label>
+              </div>
+
+              <div class="studio-field">
+                <label>Contato (Tigre)</label>
+                <input class="studio-input" id="img-contact-input" type="text" placeholder="URL da imagem..." value="assets/ukiyo-e/tiger-botanical.jpg">
+                <label class="studio-btn studio-btn-secondary studio-btn-sm" style="cursor:pointer; margin-top:6px; text-align:center;">
+                  Substituir Foto
+                  <input type="file" id="file-contact-img" accept="image/*" style="display:none;">
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:20px; border-top:2px solid var(--sumi); padding-top:16px;">
+            <button class="studio-btn studio-btn-primary" id="btn-apply-texts" type="button">
+              ✓ Atualizar Textos e Mídia
+            </button>
+          </div>
+        </section>
+
+        <!-- TAB 04: BACKUP & EXPORTAR -->
+        <section class="studio-panel" id="tab-export" role="tabpanel">
+          <div class="studio-section-title">
+            <span>Backup, Migração & Código Fonte</span>
+          </div>
+
+          <p style="font-size:0.95rem; color:var(--sumi-light); line-height:1.6;">
+            Todas as alterações feitas nesta bancada são salvas automaticamente no armazenamento local do seu navegador (<code style="background:var(--washi); padding:2px 6px; border:1px solid var(--sumi);">localStorage</code>). Você também pode baixar um arquivo JSON com todas as customizações ou copiar o código para incluir permanentemente no projeto.
+          </p>
+
+          <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:12px;">
+            <button class="studio-btn studio-btn-primary" id="btn-export-json" type="button">
+              💾 Baixar Backup (.json)
+            </button>
+            <label class="studio-btn studio-btn-secondary" style="cursor:pointer; margin:0;">
+              📂 Restaurar de Arquivo (.json)
+              <input type="file" id="file-import-json" accept=".json" style="display:none;">
+            </label>
+            <button class="studio-btn studio-btn-secondary" id="btn-copy-code" type="button">
+              📋 Copiar Configuração JSON
+            </button>
+            <button class="studio-btn studio-btn-danger" id="btn-factory-reset" type="button" style="margin-left:auto;">
+              ⚠️ Restaurar Padrões de Fábrica
+            </button>
+          </div>
+
+          <div class="studio-field" style="margin-top:20px;">
+            <label for="studio-json-preview">Visualização da Configuração Ativa</label>
+            <textarea class="studio-textarea" id="studio-json-preview" readonly style="font-size:0.75rem; min-height:180px;"></textarea>
+          </div>
+        </section>
+      </div>
+    </div>
   </dialog>
 
   <script type="module" src="app.js"></script>
