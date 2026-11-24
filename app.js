@@ -501,15 +501,16 @@ async function initNetsuke() {
     const paperColor = new THREE.Color(0xE9E3D4);
     const indigoColor = new THREE.Color(0x263B68);
     const vermilionColor = new THREE.Color(0xB51225);
+    const bodyColor = new THREE.Color(0xC8B8A0); // warmer, slightly darker paper tone
 
     const bodyMaterial = new THREE.MeshPhysicalMaterial({
-      color: paperColor,
-      roughness: 0.85,
+      color: bodyColor,
+      roughness: 0.75,
       metalness: 0.0,
-      clearcoat: 0.15,
-      clearcoatRoughness: 0.4,
-      sheen: 0.3,
-      sheenColor: new THREE.Color(0xF5EDE3),
+      clearcoat: 0.25,
+      clearcoatRoughness: 0.3,
+      sheen: 0.4,
+      sheenColor: new THREE.Color(0xE8DCC8),
     });
 
     const indigoMaterial = new THREE.MeshPhysicalMaterial({
@@ -576,6 +577,10 @@ async function initNetsuke() {
     const rimLight = new THREE.DirectionalLight(0x263B68, 0.3);
     rimLight.position.set(0, -2, -2);
     scene.add(rimLight);
+
+    const rimLight2 = new THREE.DirectionalLight(0xE8DCC8, 0.4);
+    rimLight2.position.set(1.5, -1.5, 1.5);
+    scene.add(rimLight2);
 
     /* ── Environment ── */
     const pmremGenerator = new THREE.PMREMGenerator(renderer);
